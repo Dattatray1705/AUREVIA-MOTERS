@@ -1,0 +1,1779 @@
+/* =========================================================
+   AUREVIA MOTORS
+   BMW X1 - PREMIUM MODEL PAGE
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --black: #030303;
+    --black-soft: #080808;
+    --black-light: #101010;
+
+    --gold: #c8a96b;
+    --gold-light: #f0d18a;
+    --gold-dark: #745525;
+
+    --white: #ffffff;
+    --white-soft: rgba(255, 255, 255, 0.78);
+    --white-muted: rgba(255, 255, 255, 0.55);
+
+    --border: rgba(200, 169, 107, 0.20);
+    --border-strong: rgba(200, 169, 107, 0.40);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.aurevia-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+    min-height: 80px;
+
+    padding: 0 !important;
+
+    background: rgba(3, 3, 3, 0.92);
+
+    border-bottom:
+        1px solid
+        rgba(200, 169, 107, 0.20);
+
+    backdrop-filter: blur(18px);
+
+    z-index: 1000;
+}
+
+
+.aurevia-navbar > .container-fluid {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.aurevia-navbar .navbar-brand,
+.aurevia-navbar .aurevia-logo {
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.aurevia-navbar .logo {
+    width: 100px !important;
+    height: 50px !important;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.aurevia-navbar .navbar-collapse {
+    height: 100%;
+}
+
+
+.aurevia-navbar .navbar-nav {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.aurevia-navbar .aurevia-nav-link {
+    position: relative;
+
+    padding: 10px 0 !important;
+    margin: 0 !important;
+
+    color:
+        rgba(255, 255, 255, 0.72) !important;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+
+.aurevia-navbar .aurevia-nav-link:hover,
+.aurevia-navbar .aurevia-nav-link.active {
+    color:
+        var(--gold-light) !important;
+}
+
+
+.aurevia-navbar .aurevia-nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 8px
+        rgba(240, 209, 138, 0.7);
+
+    transition: 0.3s ease;
+}
+
+
+.aurevia-navbar .aurevia-nav-link:hover::after,
+.aurevia-navbar .aurevia-nav-link.active::after {
+    width: 100%;
+}
+
+
+.aurevia-navbar .navbar-toggler {
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.4);
+
+    padding: 6px 9px;
+}
+
+
+.aurevia-navbar .navbar-toggler:focus {
+    box-shadow:
+        0 0 0 2px
+        rgba(200, 169, 107, 0.12);
+}
+
+
+.aurevia-navbar .navbar-toggler i {
+    color: var(--gold-light);
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.x1-hero {
+    position: relative;
+
+    height: 600px;
+    min-height: 500px;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    background: #020202;
+}
+
+
+.x1-hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://imgd.aeplcdn.com/664x374/n/lpk050b_1640713.jpg?q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: scale(1.04);
+
+    animation:
+        x1HeroMotion
+        18s
+        ease-in-out
+        infinite
+        alternate;
+
+    z-index: 0;
+}
+
+
+@keyframes x1HeroMotion {
+
+    0% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1.10);
+    }
+
+}
+
+
+.x1-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.58) 40%,
+            rgba(0, 0, 0, 0.20) 75%,
+            rgba(0, 0, 0, 0.55) 100%
+        );
+
+    z-index: 1;
+}
+
+
+.x1-hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.90),
+            transparent 55%
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.x1-hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    padding:
+        0
+        8%
+        70px;
+}
+
+
+.x1-brand {
+    margin-bottom: 10px;
+
+    color: var(--gold-light);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+}
+
+
+.x1-hero h1 {
+    margin: 0 0 12px;
+
+    color: var(--white);
+
+    font-size: 96px;
+    font-weight: 300;
+
+    line-height: 0.9;
+
+    letter-spacing: 8px;
+}
+
+
+.x1-tagline {
+    max-width: 600px;
+
+    margin-bottom: 15px;
+
+    color:
+        rgba(255, 255, 255, 0.80);
+
+    font-size: 16px;
+    font-weight: 300;
+
+    letter-spacing: 2px;
+
+    line-height: 1.6;
+}
+
+
+.x1-price {
+    margin-bottom: 30px;
+
+    color: var(--gold-light);
+
+    font-size: 18px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.x1-back-btn {
+    position: absolute;
+
+    top: 25px;
+    left: 30px;
+
+    z-index: 10;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 18px;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    background:
+        rgba(3, 3, 3, 0.35);
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.35);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.35s ease;
+}
+
+
+.x1-back-btn i {
+    color: var(--gold-light);
+
+    font-size: 14px;
+
+    transition: 0.35s ease;
+}
+
+
+.x1-back-btn:hover {
+    color: var(--gold-light);
+
+    border-color: var(--gold-light);
+
+    background:
+        rgba(200, 169, 107, 0.08);
+
+    box-shadow:
+        0 0 20px
+        rgba(200, 169, 107, 0.15);
+}
+
+
+.x1-back-btn:hover i {
+    transform: translateX(-5px);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.x1-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.x1-btn {
+    min-width: 190px;
+
+    padding: 15px 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.35s ease;
+}
+
+
+.primary-btn {
+    color: var(--black);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    border:
+        1px solid
+        var(--gold-light);
+
+    box-shadow:
+        0 0 20px
+        rgba(200, 169, 107, 0.15);
+}
+
+
+.primary-btn:hover {
+    color: var(--black);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(200, 169, 107, 0.25);
+}
+
+
+.secondary-btn {
+    color: var(--gold-light);
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.55);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.secondary-btn:hover {
+    color: var(--black);
+
+    background: var(--gold-light);
+
+    border-color: var(--gold-light);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+.x1-section,
+.x1-gallery-section {
+    padding: 110px 0;
+
+    position: relative;
+}
+
+
+.x1-section {
+    background: #050505;
+}
+
+
+.dark-section {
+    background:
+        linear-gradient(
+            180deg,
+            #080808 0%,
+            #030303 100%
+        );
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.x1-section-heading {
+    margin-bottom: 60px;
+
+    max-width: 800px;
+}
+
+
+.x1-section-heading > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+.x1-section-heading h2 {
+    margin-bottom: 20px;
+
+    color: var(--white);
+
+    font-size: 58px;
+    font-weight: 300;
+
+    line-height: 1.05;
+
+    letter-spacing: 3px;
+}
+
+
+.x1-section-heading p {
+    max-width: 650px;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.x1-main-gallery {
+    position: relative;
+
+    height: 580px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    background: #090909;
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.15);
+}
+
+
+.x1-main-gallery img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.7s ease;
+}
+
+
+.x1-main-gallery:hover img {
+    transform: scale(1.04);
+}
+
+
+.gallery-image-label {
+    position: absolute;
+
+    left: 30px;
+    bottom: 25px;
+
+    padding:
+        9px 15px;
+
+    color: var(--gold-light);
+
+    background:
+        rgba(3, 3, 3, 0.65);
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.35);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+.x1-gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.x1-gallery-card {
+    position: relative;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    background: #090909;
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.15);
+}
+
+
+.x1-gallery-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.7s ease;
+}
+
+
+.x1-gallery-card:hover img {
+    transform: scale(1.08);
+}
+
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.75),
+            transparent 60%
+        );
+}
+
+
+.gallery-overlay span {
+    color: var(--gold-light);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.x1-overview-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.x1-stat-card {
+    min-height: 190px;
+
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.15);
+
+    transition: 0.35s ease;
+}
+
+
+.x1-stat-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(200, 169, 107, 0.45);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+.x1-stat-card i {
+    margin-bottom: 25px;
+
+    color: var(--gold);
+
+    font-size: 27px;
+}
+
+
+.x1-stat-card span {
+    margin-bottom: 8px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+.x1-stat-card strong {
+    color: var(--white);
+
+    font-size: 20px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.performance-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.performance-card {
+    min-height: 220px;
+
+    padding: 40px 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        #080808;
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.15);
+
+    transition: 0.35s ease;
+}
+
+
+.performance-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(200, 169, 107, 0.45);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.4);
+}
+
+
+.performance-card i {
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 28px;
+}
+
+
+.performance-card span {
+    margin-bottom: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+.performance-card strong {
+    color: var(--gold-light);
+
+    font-size: 42px;
+    font-weight: 300;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.feature-card {
+    min-height: 150px;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.15);
+
+    transition: 0.35s ease;
+}
+
+
+.feature-card:hover {
+    border-color:
+        rgba(200, 169, 107, 0.45);
+
+    background:
+        rgba(200, 169, 107, 0.035);
+
+    transform: translateY(-4px);
+}
+
+
+.feature-card > i {
+    flex-shrink: 0;
+
+    color: var(--gold);
+
+    font-size: 30px;
+}
+
+
+.feature-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--white);
+
+    font-size: 16px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+
+.feature-card p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.50);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TECHNICAL SPECIFICATIONS
+========================================================= */
+
+.spec-table {
+    width: 100%;
+
+    border-top:
+        1px solid
+        rgba(200, 169, 107, 0.20);
+}
+
+
+.spec-row {
+    min-height: 65px;
+
+    padding:
+        20px 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-bottom:
+        1px solid
+        rgba(200, 169, 107, 0.12);
+
+    transition: 0.3s ease;
+}
+
+
+.spec-row:hover {
+    background:
+        rgba(200, 169, 107, 0.035);
+}
+
+
+.spec-row span {
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+.spec-row strong {
+    color: var(--white);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   SAFETY
+========================================================= */
+
+.safety-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.safety-card {
+    min-height: 190px;
+
+    padding: 35px 25px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.15);
+
+    transition: 0.35s ease;
+}
+
+
+.safety-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(200, 169, 107, 0.45);
+}
+
+
+.safety-card i {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 28px;
+}
+
+
+.safety-card h3 {
+    margin-bottom: 12px;
+
+    color: var(--white);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+.safety-card p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.50);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.x1-cta {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #020202;
+}
+
+
+.x1-cta-image {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("../../Images/bmw-x1-2.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.04);
+
+    z-index: 0;
+}
+
+
+.x1-cta-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.90) 0%,
+            rgba(0, 0, 0, 0.70) 45%,
+            rgba(0, 0, 0, 0.25) 100%
+        );
+
+    z-index: 1;
+}
+
+
+.x1-cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding:
+        0 8%;
+}
+
+
+.x1-cta-content > p {
+    margin-bottom: 15px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+.x1-cta-content h2 {
+    margin-bottom: 20px;
+
+    color: var(--white);
+
+    font-size: 70px;
+    font-weight: 300;
+
+    line-height: 0.98;
+
+    letter-spacing: 3px;
+}
+
+
+.x1-cta-content > span {
+    display: block;
+
+    max-width: 600px;
+
+    margin-bottom: 30px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.aurevia-footer {
+    padding: 35px 0;
+
+    background: #020202;
+
+    border-top:
+        1px solid
+        rgba(200, 169, 107, 0.15);
+}
+
+
+.footer-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.footer-content img {
+    width: 90px;
+    height: 45px;
+
+    object-fit: contain;
+}
+
+
+.footer-content p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.40);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   LAPTOP
+   992px - 1440px
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1440px) {
+
+    .x1-hero {
+        height: 520px !important;
+
+        min-height: 520px !important;
+        max-height: 520px !important;
+    }
+
+
+    .x1-hero-image {
+        position: absolute !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    .x1-hero-content {
+        padding:
+            0 6%
+            60px;
+    }
+
+
+    .x1-hero h1 {
+        font-size: 82px;
+    }
+
+
+    .x1-main-gallery {
+        height: 520px;
+    }
+
+
+    .x1-section,
+    .x1-gallery-section {
+        padding: 90px 0;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* NAVBAR */
+
+    .aurevia-navbar {
+        height: 70px !important;
+        min-height: 70px !important;
+
+        padding: 0 !important;
+    }
+
+
+    .aurevia-navbar > .container-fluid {
+        height: 70px;
+
+        display: flex;
+        align-items: center;
+    }
+
+
+    .aurevia-navbar .logo {
+        width: 90px !important;
+        height: 45px !important;
+    }
+
+
+    .aurevia-navbar .navbar-collapse {
+        height: auto !important;
+
+        margin-top: 0 !important;
+
+        padding: 20px !important;
+
+        background:
+            rgba(3, 3, 3, 0.98);
+
+        border:
+            1px solid
+            rgba(200, 169, 107, 0.15);
+    }
+
+
+    .aurevia-navbar .navbar-nav {
+        height: auto !important;
+
+        display: flex;
+
+        align-items: flex-start;
+    }
+
+
+    .aurevia-navbar .aurevia-nav-link {
+        padding: 10px 0 !important;
+    }
+
+
+    /* HERO */
+
+    .x1-hero {
+        height: 560px;
+
+        min-height: 500px;
+    }
+
+
+    .x1-hero-content {
+        padding:
+            0 6%
+            55px;
+    }
+
+
+    .x1-hero h1 {
+        font-size: 72px;
+    }
+
+
+    .x1-tagline {
+        font-size: 14px;
+    }
+
+
+    /* SECTIONS */
+
+    .x1-section,
+    .x1-gallery-section {
+        padding: 85px 0;
+    }
+
+
+    .x1-section-heading {
+        margin-bottom: 45px;
+    }
+
+
+    .x1-section-heading h2 {
+        font-size: 50px;
+    }
+
+
+    /* GALLERY */
+
+    .x1-main-gallery {
+        height: 450px;
+    }
+
+
+    .x1-gallery-card {
+        height: 250px;
+    }
+
+
+    /* OVERVIEW */
+
+    .x1-overview-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    /* PERFORMANCE */
+
+    .performance-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    /* FEATURES */
+
+    .features-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* SAFETY */
+
+    .safety-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    /* CTA */
+
+    .x1-cta {
+        min-height: 500px;
+    }
+
+
+    .x1-cta-content h2 {
+        font-size: 60px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    /* NAVBAR */
+
+    .aurevia-navbar {
+        height: 65px !important;
+        min-height: 65px !important;
+
+        padding: 0 !important;
+    }
+
+
+    .aurevia-navbar > .container-fluid {
+        height: 65px;
+    }
+
+
+    .aurevia-navbar .logo {
+        width: 85px !important;
+        height: 42px !important;
+    }
+
+
+    .aurevia-navbar .navbar-collapse {
+        margin-top: 0 !important;
+
+        padding: 20px !important;
+    }
+
+
+    /* HERO */
+
+    .x1-hero {
+        height: 620px;
+
+        min-height: 620px;
+    }
+
+
+    .x1-hero-content {
+        padding:
+            0
+            25px
+            50px;
+    }
+
+
+    .x1-hero h1 {
+        font-size: 58px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .x1-brand {
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .x1-tagline {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+
+    .x1-price {
+        font-size: 15px;
+    }
+
+
+    .x1-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .x1-btn {
+        width: 100%;
+    }
+
+
+    /* BACK BUTTON */
+
+    .x1-back-btn {
+        top: 18px;
+        left: 18px;
+
+        padding:
+            9px 13px;
+
+        font-size: 9px;
+    }
+
+
+    /* SECTIONS */
+
+    .x1-section,
+    .x1-gallery-section {
+        padding: 70px 0;
+    }
+
+
+    .x1-section-heading {
+        margin-bottom: 40px;
+
+        padding: 0 5px;
+    }
+
+
+    .x1-section-heading h2 {
+        font-size: 42px;
+    }
+
+
+    .x1-section-heading p {
+        font-size: 12px;
+    }
+
+
+    /* GALLERY */
+
+    .x1-main-gallery {
+        height: 350px;
+    }
+
+
+    .x1-gallery-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .x1-gallery-card {
+        height: 260px;
+    }
+
+
+    /* OVERVIEW */
+
+    .x1-overview-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .x1-stat-card {
+        min-height: 160px;
+    }
+
+
+    /* PERFORMANCE */
+
+    .performance-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .performance-card {
+        padding:
+            30px 15px;
+    }
+
+
+    .performance-card strong {
+        font-size: 38px;
+    }
+
+
+    .performance-card span {
+        font-size: 8px;
+    }
+
+
+    /* FEATURES */
+
+    .features-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .feature-card {
+        padding: 25px;
+    }
+
+
+    /* SPECS */
+
+    .spec-row {
+        padding:
+            17px 15px;
+
+        gap: 15px;
+    }
+
+
+    .spec-row span {
+        font-size: 10px;
+    }
+
+
+    .spec-row strong {
+        font-size: 10px;
+    }
+
+
+    /* SAFETY */
+
+    .safety-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* CTA */
+
+    .x1-cta {
+        min-height: 550px;
+    }
+
+
+    .x1-cta-content {
+        padding:
+            0 25px;
+    }
+
+
+    .x1-cta-content h2 {
+        font-size: 48px;
+    }
+
+
+    .x1-cta .x1-actions {
+        margin-top: 30px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+
+    .footer-content p {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+    .x1-hero h1 {
+        font-size: 50px;
+    }
+
+
+    .x1-section-heading h2 {
+        font-size: 36px;
+    }
+
+
+    .performance-card strong {
+        font-size: 32px;
+    }
+
+
+    .x1-cta-content h2 {
+        font-size: 40px;
+    }
+
+}

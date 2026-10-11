@@ -1,0 +1,1171 @@
+/* =========================================
+   AUREVIA MOTORS
+   PORSCHE PAGE
+========================================= */
+
+:root {
+
+    --black: #030303;
+    --gold: #c8a96b;
+    --gold-light: #f0d18a;
+    --gold-dark: #745525;
+    --white: #ffffff;
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.aurevia-navbar {
+
+    position: sticky;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 80px;
+    min-height: 80px;
+
+    padding: 0 !important;
+
+    background:
+        rgba(3, 3, 3, 0.92);
+
+    border-bottom:
+        1px solid
+        rgba(200, 169, 107, 0.20);
+
+    backdrop-filter:
+        blur(18px);
+
+    z-index: 1000;
+
+}
+
+
+.aurevia-navbar > .container-fluid {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.aurevia-navbar .navbar-brand {
+
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.aurevia-navbar .logo {
+
+    width: 100px !important;
+    height: 50px !important;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+.aurevia-navbar .navbar-collapse {
+
+    height: 100%;
+
+}
+
+
+.aurevia-navbar .navbar-nav {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.aurevia-navbar .aurevia-nav-link {
+
+    position: relative;
+
+    padding: 10px 0 !important;
+
+    margin: 0 !important;
+
+    color:
+        rgba(255, 255, 255, 0.72) !important;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+
+}
+
+
+.aurevia-navbar .aurevia-nav-link:hover,
+.aurevia-navbar .aurevia-nav-link.active {
+
+    color:
+        var(--gold-light) !important;
+
+}
+
+
+.aurevia-navbar .aurevia-nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 2px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        var(--gold-light);
+
+    box-shadow:
+        0 0 8px
+        rgba(240, 209, 138, 0.7);
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.aurevia-navbar .aurevia-nav-link:hover::after,
+.aurevia-navbar .aurevia-nav-link.active::after {
+
+    width: 100%;
+
+}
+
+
+/* Toggle */
+
+.aurevia-navbar .navbar-toggler {
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.4);
+
+    padding:
+        6px 9px;
+
+}
+
+
+.aurevia-navbar .navbar-toggler:focus {
+
+    box-shadow:
+        0 0 0 2px
+        rgba(200, 169, 107, 0.12);
+
+}
+
+
+.aurevia-navbar .navbar-toggler i {
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        24px;
+
+}
+
+
+/* =========================================
+   PORSCHE HERO
+========================================= */
+
+.porsche-hero {
+
+    position: relative;
+
+    height: 45vh;
+
+    min-height: 400px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    background:
+        #020202;
+
+}
+
+
+/* Hero Image */
+
+.porsche-hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://images7.alphacoders.com/140/thumb-1920-1403259.jpg");
+
+    background-size:
+        cover;
+
+    background-position:
+        center;
+
+    background-repeat:
+        no-repeat;
+
+    transform:
+        scale(1.04);
+
+    animation:
+        porscheHeroMotion
+        18s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+/* Overlay */
+
+.porsche-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45) 50%,
+            rgba(0, 0, 0, 0.95)
+        );
+
+    z-index: 1;
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.porsche-back-btn {
+
+    position: absolute;
+
+    top: 25px;
+    left: 30px;
+
+    z-index: 10;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        11px 18px;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.35);
+
+    background:
+        rgba(3, 3, 3, 0.35);
+
+    backdrop-filter:
+        blur(10px);
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2px;
+
+    transition:
+        0.35s ease;
+
+}
+
+
+.porsche-back-btn i {
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        14px;
+
+    transition:
+        0.35s ease;
+
+}
+
+
+.porsche-back-btn:hover {
+
+    color:
+        var(--gold-light);
+
+    border-color:
+        var(--gold-light);
+
+    background:
+        rgba(200, 169, 107, 0.08);
+
+    box-shadow:
+        0 0 20px
+        rgba(200, 169, 107, 0.15);
+
+}
+
+
+.porsche-back-btn:hover i {
+
+    transform:
+        translateX(-5px);
+
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.porsche-hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    padding:
+        0 6% 70px;
+
+}
+
+
+.porsche-eyebrow {
+
+    margin-bottom:
+        20px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        4px;
+
+}
+
+
+.porsche-title {
+
+    margin: 0;
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(55px, 7vw, 110px);
+
+    font-weight:
+        300;
+
+    line-height:
+        0.95;
+
+    letter-spacing:
+        -3px;
+
+}
+
+
+.porsche-title span {
+
+    color:
+        var(--gold-light);
+
+}
+
+
+.porsche-subtitle {
+
+    margin-top:
+        25px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+/* =========================================
+   COLLECTION
+========================================= */
+
+.porsche-collection {
+
+    padding:
+        90px 0 120px;
+
+    background:
+        #030303;
+
+}
+
+
+.collection-header {
+
+    margin-bottom:
+        55px;
+
+}
+
+
+.collection-eyebrow {
+
+    margin-bottom:
+        15px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        4px;
+
+}
+
+
+.collection-header h2 {
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(35px, 5vw, 65px);
+
+    font-weight:
+        300;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.collection-header h2 span {
+
+    color:
+        var(--gold-light);
+
+}
+
+
+.collection-description {
+
+    max-width:
+        650px;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================
+   MODEL CARD
+========================================= */
+
+.porsche-model-card {
+
+    position:
+        relative;
+
+    display:
+        block;
+
+    overflow:
+        hidden;
+
+    min-height:
+        390px;
+
+    background:
+        #080808;
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.15);
+
+    transition:
+        0.45s ease;
+
+}
+
+
+.model-image {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+}
+
+
+.model-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    opacity:
+        0.65;
+
+    transition:
+        0.6s ease;
+
+}
+
+
+.porsche-model-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.10) 70%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+.porsche-model-card:hover {
+
+    border-color:
+        rgba(240, 209, 138, 0.7);
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.5);
+
+}
+
+
+.porsche-model-card:hover
+.model-image img {
+
+    transform:
+        scale(1.08);
+
+    opacity:
+        0.85;
+
+}
+
+
+/* =========================================
+   MODEL CONTENT
+========================================= */
+
+.model-content {
+
+    position:
+        absolute;
+
+    left:
+        28px;
+
+    right:
+        28px;
+
+    bottom:
+        25px;
+
+    z-index:
+        5;
+
+}
+
+
+.model-content span {
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.model-content h3 {
+
+    margin:
+        8px 0 0;
+
+    color:
+        var(--white);
+
+    font-size:
+        28px;
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.model-content i {
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    bottom:
+        2px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        20px;
+
+    transition:
+        0.35s ease;
+
+}
+
+
+.porsche-model-card:hover
+.model-content i {
+
+    transform:
+        translateX(7px);
+
+}
+
+
+/* =========================================
+   HERO ANIMATION
+========================================= */
+
+@keyframes porscheHeroMotion {
+
+    from {
+
+        transform:
+            scale(1.04)
+            translateX(0);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.08)
+            translateX(-10px);
+
+    }
+
+}
+
+.porsche-footer {
+
+    padding:
+        30px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(200,169,107,0.14);
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.porsche-footer span {
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =========================================
+   LAPTOP
+   992px - 1440px
+========================================= */
+
+@media (min-width: 992px)
+and (max-width: 1440px) {
+
+    .porsche-hero {
+
+        height:
+            380px !important;
+
+        min-height:
+            380px !important;
+
+        max-height:
+            380px !important;
+
+        overflow:
+            hidden;
+
+    }
+
+
+    .porsche-hero-image {
+
+        position:
+            absolute !important;
+
+        top:
+            0 !important;
+
+        left:
+            0 !important;
+
+        right:
+            0 !important;
+
+        bottom:
+            0 !important;
+
+        width:
+            100% !important;
+
+        height:
+            100% !important;
+
+        background-size:
+            cover;
+
+        background-position:
+            center;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-navbar {
+
+        height:
+            70px !important;
+
+        min-height:
+            70px !important;
+
+    }
+
+
+    .aurevia-navbar > .container-fluid {
+
+        height:
+            70px;
+
+    }
+
+
+    .aurevia-navbar .logo {
+
+        width:
+            90px !important;
+
+        height:
+            45px !important;
+
+    }
+
+
+    .aurevia-navbar .navbar-collapse {
+
+        height:
+            auto !important;
+
+        margin-top:
+            0 !important;
+
+        padding:
+            20px !important;
+
+        background:
+            rgba(3, 3, 3, 0.98);
+
+        border:
+            1px solid
+            rgba(200, 169, 107, 0.15);
+
+    }
+
+
+    .aurevia-navbar .navbar-nav {
+
+        height:
+            auto !important;
+
+        display:
+            flex;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .aurevia-navbar .aurevia-nav-link {
+
+        padding:
+            10px 0 !important;
+
+    }
+
+
+    .porsche-hero {
+
+        height:
+            55vh;
+
+        min-height:
+            400px;
+
+    }
+
+
+    .porsche-hero-content {
+
+        padding:
+            0 5% 55px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .aurevia-navbar {
+
+        height:
+            65px !important;
+
+        min-height:
+            65px !important;
+
+    }
+
+
+    .aurevia-navbar > .container-fluid {
+
+        height:
+            65px;
+
+    }
+
+
+    .aurevia-navbar .logo {
+
+        width:
+            85px !important;
+
+        height:
+            42px !important;
+
+    }
+
+
+    .aurevia-navbar .navbar-collapse {
+
+        margin-top:
+            0 !important;
+
+        padding:
+            20px !important;
+
+    }
+
+
+    .porsche-hero {
+
+        height:
+            45vh;
+
+        min-height:
+            350px;
+
+    }
+
+
+    .porsche-back-btn {
+
+        top:
+            18px;
+
+        left:
+            18px;
+
+        padding:
+            9px 13px;
+
+        font-size:
+            9px;
+
+    }
+
+
+    .porsche-hero-content {
+
+        padding:
+            0 6% 40px;
+
+    }
+
+
+    .porsche-eyebrow {
+
+        font-size:
+            8px;
+
+        letter-spacing:
+            2.5px;
+
+        margin-bottom:
+            15px;
+
+    }
+
+
+    .porsche-title {
+
+        font-size:
+            48px;
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .porsche-subtitle {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            2px;
+
+        margin-top:
+            18px;
+
+    }
+
+
+    .porsche-collection {
+
+        padding:
+            65px 0 80px;
+
+    }
+
+
+    .collection-header {
+
+        margin-bottom:
+            35px;
+
+    }
+
+
+    .collection-header h2 {
+
+        font-size:
+            38px;
+
+    }
+
+
+    .collection-description {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .porsche-model-card {
+
+        min-height:
+            340px;
+
+    }
+
+}

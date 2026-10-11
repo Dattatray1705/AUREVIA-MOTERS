@@ -1,0 +1,1318 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --black: #030303;
+    --gold: #c8a96b;
+    --gold-light: #f0d18a;
+    --gold-dark: #745525;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.aurevia-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 80px;
+    min-height: 80px;
+
+    padding: 0 !important;
+
+    background: rgba(3, 3, 3, 0.92);
+
+    border-bottom:
+        1px solid rgba(200, 169, 107, 0.20);
+
+    backdrop-filter: blur(18px);
+
+    z-index: 1000;
+}
+
+.aurevia-navbar > .container-fluid {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.aurevia-navbar .navbar-brand {
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    align-items: center;
+}
+
+.aurevia-navbar .logo {
+    width: 100px !important;
+    height: 50px !important;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.aurevia-navbar .navbar-collapse {
+    height: 100%;
+}
+
+.aurevia-navbar .navbar-nav {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.aurevia-navbar .aurevia-nav-link {
+    position: relative;
+
+    padding: 10px 0 !important;
+    margin: 0 !important;
+
+    color: rgba(255,255,255,0.72) !important;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.aurevia-navbar .aurevia-nav-link:hover,
+.aurevia-navbar .aurevia-nav-link.active {
+    color: var(--gold-light) !important;
+}
+
+.aurevia-navbar .aurevia-nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 8px rgba(240,209,138,0.7);
+
+    transition: 0.3s ease;
+}
+
+.aurevia-navbar .aurevia-nav-link:hover::after,
+.aurevia-navbar .aurevia-nav-link.active::after {
+    width: 100%;
+}
+
+.aurevia-navbar .navbar-toggler {
+    border:
+        1px solid rgba(200,169,107,0.4);
+
+    padding: 6px 9px;
+}
+
+.aurevia-navbar .navbar-toggler:focus {
+    box-shadow:
+        0 0 0 2px rgba(200,169,107,0.12);
+}
+
+.aurevia-navbar .navbar-toggler i {
+    color: var(--gold-light);
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.xm-hero {
+    position: relative;
+
+    height: 600px;
+    min-height: 500px;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    background: #020202;
+}
+
+.xm-hero-image {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        url("https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/XM/10570/1762780641671/front-left-side-47.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: scale(1.04);
+
+    animation:
+        xmHeroMotion
+        18s
+        ease-in-out
+        infinite
+        alternate;
+
+    z-index: 0;
+}
+
+@keyframes xmHeroMotion {
+
+    from {
+        transform: scale(1.04);
+    }
+
+    to {
+        transform: scale(1.10);
+    }
+}
+
+.xm-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.92) 0%,
+            rgba(0,0,0,0.60) 45%,
+            rgba(0,0,0,0.15) 100%
+        );
+
+    z-index: 1;
+}
+
+.xm-hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    padding: 0 8% 70px;
+}
+
+.xm-brand {
+    margin-bottom: 8px;
+
+    color: var(--gold-light);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 5px;
+}
+
+.xm-hero h1 {
+    margin: 0;
+
+    font-size:
+        clamp(70px, 9vw, 125px);
+
+    font-weight: 300;
+
+    letter-spacing: 5px;
+
+    line-height: 0.95;
+}
+
+.xm-tagline {
+    margin-top: 20px;
+
+    color:
+        rgba(255,255,255,0.72);
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+}
+
+.xm-price {
+    margin-top: 14px;
+
+    color: var(--gold-light);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.xm-back-btn {
+    position: absolute;
+
+    top: 25px;
+    left: 30px;
+
+    z-index: 10;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 18px;
+
+    color:
+        rgba(255,255,255,0.75);
+
+    border:
+        1px solid rgba(200,169,107,0.35);
+
+    background:
+        rgba(3,3,3,0.35);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.35s ease;
+}
+
+.xm-back-btn i {
+    color: var(--gold-light);
+
+    font-size: 14px;
+
+    transition: 0.35s ease;
+}
+
+.xm-back-btn:hover {
+    color: var(--gold-light);
+
+    border-color: var(--gold-light);
+
+    background:
+        rgba(200,169,107,0.08);
+
+    box-shadow:
+        0 0 20px rgba(200,169,107,0.15);
+}
+
+.xm-back-btn:hover i {
+    transform:
+        translateX(-5px);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.xm-actions {
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.xm-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 14px 22px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.35s ease;
+}
+
+.primary-btn {
+    color: #050505;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    border:
+        1px solid var(--gold-light);
+}
+
+.primary-btn:hover {
+    color: #050505;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(240,209,138,0.30);
+}
+
+.secondary-btn {
+    color: var(--gold-light);
+
+    background:
+        rgba(200,169,107,0.05);
+
+    border:
+        1px solid rgba(200,169,107,0.55);
+}
+
+.secondary-btn:hover {
+    color: var(--gold-light);
+
+    border-color:
+        var(--gold-light);
+
+    background:
+        rgba(200,169,107,0.10);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+.xm-section {
+    padding:
+        110px 0;
+
+    background:
+        #050505;
+}
+
+.dark-section {
+    background:
+        #020202;
+}
+
+.xm-gallery-section {
+    padding:
+        110px 0;
+
+    background:
+        #030303;
+}
+
+.xm-section-heading {
+    max-width: 720px;
+
+    margin-bottom: 55px;
+}
+
+.xm-section-heading > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+.xm-section-heading h2 {
+    margin: 0;
+
+    color: var(--white);
+
+    font-size:
+        clamp(40px,5vw,70px);
+
+    font-weight: 300;
+
+    line-height: 0.98;
+
+    letter-spacing: 3px;
+}
+
+.xm-section-heading p {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color:
+        rgba(255,255,255,0.52);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.xm-main-gallery {
+    position: relative;
+
+    height: 580px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid rgba(200,169,107,0.18);
+}
+
+.xm-main-gallery img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.xm-main-gallery:hover img {
+    transform:
+        scale(1.04);
+}
+
+.gallery-image-label {
+    position: absolute;
+
+    bottom: 25px;
+    left: 25px;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.xm-gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.xm-gallery-card {
+    position: relative;
+
+    height: 260px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(200,169,107,0.16);
+}
+
+.xm-gallery-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.xm-gallery-card:hover img {
+    transform:
+        scale(1.07);
+}
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            transparent 45%,
+            rgba(0,0,0,0.85)
+        );
+}
+
+.gallery-overlay span {
+    color: var(--gold-light);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.xm-overview-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 20px;
+}
+
+.xm-stat-card {
+    min-height: 210px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(200,169,107,0.16);
+
+    background:
+        rgba(255,255,255,0.015);
+
+    transition:
+        0.35s ease;
+}
+
+.xm-stat-card:hover {
+    border-color:
+        rgba(240,209,138,0.50);
+
+    transform:
+        translateY(-5px);
+}
+
+.xm-stat-card i {
+    color: var(--gold-light);
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+}
+
+.xm-stat-card span {
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.xm-stat-card strong {
+    margin-top: 10px;
+
+    color: var(--white);
+
+    font-size: 19px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.performance-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 20px;
+}
+
+.performance-card {
+    padding:
+        35px 30px;
+
+    min-height: 290px;
+
+    border:
+        1px solid rgba(200,169,107,0.16);
+
+    background:
+        rgba(255,255,255,0.015);
+
+    transition:
+        0.35s ease;
+}
+
+.performance-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(240,209,138,0.50);
+}
+
+.performance-card > span {
+    color: var(--gold-light);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.performance-card strong {
+    display: block;
+
+    margin-top: 35px;
+
+    font-size: 55px;
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+.performance-card small {
+    display: block;
+
+    margin-top: 8px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.performance-card p {
+    margin-top: 30px;
+
+    color:
+        rgba(255,255,255,0.50);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 20px;
+}
+
+.feature-card {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    border:
+        1px solid rgba(200,169,107,0.16);
+
+    transition:
+        0.35s ease;
+}
+
+.feature-card:hover {
+    border-color:
+        rgba(240,209,138,0.50);
+
+    transform:
+        translateY(-4px);
+}
+
+.feature-card i {
+    flex-shrink: 0;
+
+    color: var(--gold-light);
+
+    font-size: 25px;
+}
+
+.feature-card h3 {
+    margin: 0;
+
+    color: var(--white);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.feature-card p {
+    margin-top: 12px;
+    margin-bottom: 0;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.spec-table {
+    border-top:
+        1px solid rgba(200,169,107,0.18);
+}
+
+.spec-row {
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding:
+        18px 10px;
+
+    border-bottom:
+        1px solid rgba(200,169,107,0.14);
+}
+
+.spec-row span {
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.spec-row strong {
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   SAFETY
+========================================================= */
+
+.safety-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.safety-card {
+    min-height: 130px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    border:
+        1px solid rgba(200,169,107,0.16);
+
+    transition:
+        0.35s ease;
+}
+
+.safety-card:hover {
+    border-color:
+        rgba(240,209,138,0.50);
+
+    transform:
+        translateY(-4px);
+}
+
+.safety-card i {
+    color: var(--gold-light);
+
+    font-size: 22px;
+}
+
+.safety-card span {
+    color:
+        rgba(255,255,255,0.70);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.xm-cta {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        #020202;
+}
+
+.xm-cta-image {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        url("../../Images/bmw-xm-2.jpg")
+        center / cover
+        no-repeat;
+
+    transform:
+        scale(1.04);
+}
+
+.xm-cta-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.70),
+            rgba(0,0,0,0.25)
+        );
+}
+
+.xm-cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.xm-cta-content > p {
+    margin-bottom: 15px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+.xm-cta-content h2 {
+    margin: 0;
+
+    font-size:
+        clamp(45px,6vw,80px);
+
+    font-weight: 300;
+
+    line-height: 0.95;
+
+    letter-spacing: 3px;
+}
+
+.xm-cta-content > span {
+    display: block;
+
+    margin-top: 25px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.xm-footer {
+    padding:
+        35px 0;
+
+    background:
+        #020202;
+
+    border-top:
+        1px solid rgba(200,169,107,0.16);
+}
+
+.footer-content {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-content img {
+    width: 90px;
+    height: 45px;
+
+    object-fit: contain;
+}
+
+.footer-content p {
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.40);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (min-width: 992px)
+and (max-width: 1440px) {
+
+    .xm-hero {
+        height: 520px !important;
+
+        min-height: 520px !important;
+
+        max-height: 520px !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-navbar {
+        height: 70px !important;
+
+        min-height: 70px !important;
+
+        padding: 0 !important;
+    }
+
+    .aurevia-navbar > .container-fluid {
+        height: 70px;
+    }
+
+    .aurevia-navbar .logo {
+        width: 90px !important;
+
+        height: 45px !important;
+    }
+
+    .aurevia-navbar .navbar-collapse {
+        height: auto !important;
+
+        margin-top: 0 !important;
+
+        padding: 20px !important;
+
+        background:
+            rgba(3,3,3,0.98);
+
+        border:
+            1px solid rgba(200,169,107,0.15);
+    }
+
+    .aurevia-navbar .navbar-nav {
+        height: auto !important;
+
+        display: flex;
+
+        align-items: flex-start;
+    }
+
+    .aurevia-navbar .aurevia-nav-link {
+        padding:
+            10px 0 !important;
+    }
+
+    .xm-overview-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .performance-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .safety-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .aurevia-navbar {
+        height: 65px !important;
+
+        min-height: 65px !important;
+    }
+
+    .aurevia-navbar > .container-fluid {
+        height: 65px;
+    }
+
+    .aurevia-navbar .logo {
+        width: 85px !important;
+
+        height: 42px !important;
+    }
+
+    .aurevia-navbar .navbar-collapse {
+        margin-top: 0 !important;
+
+        padding: 20px !important;
+    }
+
+    .xm-hero {
+        height: 620px;
+
+        min-height: 620px;
+    }
+
+    .xm-hero-content {
+        padding:
+            0 25px 55px;
+    }
+
+    .xm-hero h1 {
+        font-size:
+            clamp(65px,20vw,90px);
+    }
+
+    .xm-tagline {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+    .xm-back-btn {
+        top: 18px;
+
+        left: 18px;
+
+        padding:
+            9px 13px;
+
+        font-size: 9px;
+    }
+
+    .xm-actions {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .xm-btn {
+        width: 100%;
+
+        max-width: 250px;
+    }
+
+    .xm-section,
+    .xm-gallery-section {
+        padding:
+            80px 0;
+    }
+
+    .xm-section-heading {
+        margin-bottom: 40px;
+    }
+
+    .xm-section-heading h2 {
+        font-size: 42px;
+    }
+
+    .xm-main-gallery {
+        height: 350px;
+    }
+
+    .xm-gallery-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .xm-gallery-card {
+        height: 240px;
+    }
+
+    .xm-overview-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .performance-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .performance-card {
+        min-height: 250px;
+
+        padding:
+            25px 20px;
+    }
+
+    .performance-card strong {
+        font-size: 42px;
+    }
+
+    .features-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .safety-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .spec-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .spec-row strong {
+        text-align: left;
+    }
+
+    .xm-cta {
+        min-height: 550px;
+    }
+
+    .xm-cta-content h2 {
+        font-size: 48px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}

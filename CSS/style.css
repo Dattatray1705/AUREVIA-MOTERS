@@ -1,0 +1,5885 @@
+/* =========================================================
+   AUREVIA MOTORS
+   PREMIUM SHOWROOM LANDING PAGE
+
+   HTML + CSS + BOOTSTRAP
+   NO JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   01. DESIGN VARIABLES
+========================================================= */
+
+:root {
+
+    --black: #030303;
+
+    --gold: #c8a96b;
+
+    --gold-light: #f0d18a;
+
+    --gold-dark: #745525;
+
+    --white: #ffffff;
+
+}
+
+
+/* =========================================================
+   02. GLOBAL RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    min-height: 100%;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    overflow-x: hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   03. MAIN LANDING PAGE
+========================================================= */
+
+.aurevia-landing {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    background: #000000;
+
+}
+
+
+/* =========================================================
+   04. SHOWROOM BACKGROUND
+========================================================= */
+
+.showroom-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-image:
+        url("../Images/aurevia-showroom.png");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    transform: scale(1.015);
+
+    animation:
+        showroomZoom
+        14s
+        ease-in-out
+        infinite
+        alternate;
+
+    z-index: 0;
+
+}
+
+
+/* =========================================================
+   05. CINEMATIC OVERLAY
+========================================================= */
+
+.showroom-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+
+            transparent 38%,
+
+            rgba(0, 0, 0, 0.10) 70%,
+
+            rgba(0, 0, 0, 0.35) 100%
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   06. GOLD LIGHT EFFECTS
+========================================================= */
+
+.gold-glow {
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    filter: blur(150px);
+
+    opacity: 0.06;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+}
+
+
+/* LEFT */
+
+.gold-glow-left {
+
+    left: -250px;
+
+    bottom: -220px;
+
+    animation:
+        glowLeft
+        9s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+/* RIGHT */
+
+.gold-glow-right {
+
+    right: -250px;
+
+    top: -220px;
+
+    animation:
+        glowRight
+        11s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+/* =========================================================
+   AUREVIA UNIQUE LUXURY BUTTON
+========================================================= */
+
+.aurevia-explore-btn {
+
+    position: absolute;
+
+    left: 50%;
+    top: 66%;
+
+    transform: translate(-50%, -50%);
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    min-width: 260px;
+
+margin-top: 15px;
+    padding: 17px 24px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(200, 169, 107, 0.10),
+            rgba(255, 255, 255, 0.02)
+        );
+
+    border: 1px solid rgba(225, 201, 130, 0.75);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+    overflow: hidden;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    /* MAIN SHADOW */
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.45),
+        0 0 10px rgba(225, 196, 122, 0.35);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+/* =========================================================
+   MOVING GOLD LIGHT
+========================================================= */
+
+.aurevia-explore-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 70%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.30),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.8s ease;
+
+}
+
+
+/* =========================================================
+   INNER GOLD LINE
+========================================================= */
+
+.aurevia-explore-btn::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 4px;
+
+    border: 1px solid rgba(200,169,107,0.18);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   BUTTON TEXT
+========================================================= */
+
+.btn-text {
+
+    position: relative;
+
+    z-index: 2;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   ARROW BOX
+========================================================= */
+
+.btn-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-left: 1px solid rgba(225,201,130,0.45);
+
+    color: #e4c982;
+
+    transition:
+
+        transform 0.4s ease,
+
+        color 0.4s ease;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.aurevia-explore-btn:hover {
+
+    color: #ffffff;
+
+    border-color: #f0d18a;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(200,169,107,0.12),
+            rgba(255,255,255,0.06),
+            rgba(200,169,107,0.12)
+        );
+
+    transform:
+        translate(-50%, -50%)
+        translateY(-4px);
+
+    box-shadow:
+
+        0 0 5px rgba(240,209,138,0.9),
+
+        0 0 18px rgba(225,196,122,0.55),
+
+        0 0 38px rgba(200,169,107,0.30);
+
+}
+
+
+/* Moving light */
+
+.aurevia-explore-btn:hover::before {
+
+    left: 150%;
+
+}
+
+
+/* Arrow */
+
+.aurevia-explore-btn:hover .btn-icon {
+
+    color: #ffffff;
+
+    transform: translate(4px, -3px);
+
+}
+
+
+/* =========================================================
+   DESKTOP GOLD PULSE
+========================================================= */
+
+@keyframes aureviaButtonPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 0 0
+            rgba(200,169,107,0);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 14px
+            rgba(200,169,107,0.12);
+
+    }
+
+}
+
+
+.aurevia-explore-btn {
+
+    animation:
+        aureviaButtonPulse
+        3.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .aurevia-explore-btn {
+
+        top: 65%;
+
+        min-width: 220px;
+
+        padding: 14px 18px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        gap: 14px;
+
+    }
+
+
+    .btn-icon {
+
+        width: 55px;
+
+        height: 50px;
+
+    }
+
+}
+
+
+/* =========================================================
+   11. BOTTOM GOLD LIGHT
+========================================================= */
+
+
+
+
+/* =========================================================
+   12. BACKGROUND ZOOM ANIMATION
+========================================================= */
+
+@keyframes showroomZoom {
+
+    from {
+
+        transform:
+            scale(1.015);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.045);
+
+    }
+
+}
+
+
+/* =========================================================
+   13. LEFT GOLD GLOW ANIMATION
+========================================================= */
+
+@keyframes glowLeft {
+
+    from {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                70px,
+                -45px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   14. RIGHT GOLD GLOW ANIMATION
+========================================================= */
+
+@keyframes glowRight {
+
+    from {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -70px,
+                55px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   15. BOTTOM GLOW ANIMATION
+========================================================= */
+
+@keyframes bottomPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.35;
+
+    }
+
+    50% {
+
+        opacity: 0.85;
+
+    }
+
+}
+
+
+/* =========================================================
+   16. TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .aurevia-landing {
+
+        min-height: 560px;
+
+    }
+
+
+    .showroom-background {
+
+        background-position:
+            center center;
+
+    }
+
+
+    .explore-hotspot {
+
+        top: 64%;
+
+    }
+
+}
+
+
+/* =========================================================
+   17. MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .aurevia-landing {
+
+        width: 100%;
+
+        height: 100svh;
+
+        min-height: 520px;
+
+    }
+
+
+    .showroom-background {
+
+        background-position:
+            center center;
+
+    }
+
+
+    .showroom-overlay {
+
+        background:
+
+            radial-gradient(
+                circle at center,
+
+                transparent 32%,
+
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.30
+                ) 100%
+            );
+
+    }
+
+
+    /* Mobile clickable button */
+
+    .explore-hotspot {
+
+        top: 63.5%;
+
+        width: 210px;
+
+        height: 48px;
+
+    }
+
+
+    /* Smaller glow */
+
+    .explore-hotspot:hover::before {
+
+        box-shadow:
+
+            0 0 3px
+            rgba(
+                255,
+                225,
+                150,
+                0.90
+            ),
+
+            0 0 7px
+            rgba(
+                240,
+                209,
+                138,
+                0.60
+            ),
+
+            0 0 14px
+            rgba(
+                200,
+                169,
+                107,
+                0.35
+            );
+
+    }
+
+
+    /* Bottom line */
+
+    .bottom-glow {
+
+        width: 75vw;
+
+    }
+
+
+    /* Smaller gold lights */
+
+    .gold-glow {
+
+        width: 280px;
+
+        height: 280px;
+
+        filter: blur(110px);
+
+    }
+
+}
+
+
+/* =========================================================
+   18. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .showroom-background,
+    .gold-glow,
+    .bottom-glow {
+
+        animation: none;
+
+    }
+
+}
+
+
+
+
+/* Home Page CSS */
+
+
+/* =========================================================
+   AUREVIA HOME PAGE
+========================================================= */
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+/* =========================================================
+   AUREVIA GLOBAL NAVBAR
+   SAME NAVBAR ON HOME + ABOUT + CARS + CONTACT
+========================================================= */
+
+.aurevia-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    min-height: 80px;
+
+    padding: 0 !important;
+
+    background: rgba(3, 3, 3, 0.92);
+
+    border-bottom: 1px solid rgba(200, 169, 107, 0.20);
+
+    backdrop-filter: blur(18px);
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.aurevia-navbar > .container-fluid {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.aurevia-navbar .navbar-brand {
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    align-items: center;
+}
+
+.aurevia-navbar .logo {
+    width: 100px !important;
+    height: 50px !important;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.aurevia-navbar .navbar-collapse {
+    height: auto;
+}
+
+.aurevia-navbar .navbar-nav {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.aurevia-navbar .aurevia-nav-link {
+    position: relative;
+
+    padding: 10px 0 !important;
+    margin: 0 !important;
+
+    color: rgba(255, 255, 255, 0.72) !important;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Hover + Active */
+
+.aurevia-navbar .aurevia-nav-link:hover,
+.aurevia-navbar .aurevia-nav-link.active {
+    color: var(--gold-light) !important;
+}
+
+
+/* =========================================================
+   GOLD UNDERLINE
+========================================================= */
+
+.aurevia-navbar .aurevia-nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 8px rgba(240, 209, 138, 0.7);
+
+    transition: width 0.3s ease;
+}
+
+
+/* Show underline */
+
+.aurevia-navbar .aurevia-nav-link:hover::after,
+.aurevia-navbar .aurevia-nav-link.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.aurevia-navbar .navbar-toggler {
+    padding: 6px 9px;
+
+    border: 1px solid rgba(200, 169, 107, 0.4);
+}
+
+.aurevia-navbar .navbar-toggler:focus {
+    box-shadow:
+        0 0 0 2px rgba(200, 169, 107, 0.12);
+}
+
+.aurevia-navbar .navbar-toggler i {
+    color: var(--gold-light);
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-navbar {
+        height: 70px;
+        min-height: 70px;
+    }
+
+    .aurevia-navbar .logo {
+        width: 90px !important;
+        height: 45px !important;
+    }
+
+    .aurevia-navbar .navbar-collapse {
+
+        height: auto;
+
+        margin-top: 0;
+
+        padding: 20px;
+
+        background: rgba(3, 3, 3, 0.98);
+
+        border: 1px solid rgba(200, 169, 107, 0.15);
+    }
+
+    .aurevia-navbar .navbar-nav {
+        height: auto;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .aurevia-navbar {
+        height: 65px;
+        min-height: 65px;
+    }
+
+    .aurevia-navbar .logo {
+        width: 85px !important;
+        height: 42px !important;
+    }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+
+/* =========================================================
+   HOME HERO
+   PREMIUM BACKGROUND IMAGE
+========================================================= */
+
+.aurevia-home-hero {
+
+    position: relative;
+
+    min-height: 82vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #020202;
+
+}
+
+
+/* =========================================================
+   HOME BACKGROUND IMAGE
+========================================================= */
+
+.home-hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("../Images/Aurevia Motors Luxury Showroom Spectacle.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    transform: scale(1.04);
+
+    opacity: 0.80;
+
+    animation:
+        homeHeroMotion
+        18s
+        ease-in-out
+        infinite
+        alternate;
+
+    z-index: 0;
+
+}
+
+
+/* =========================================================
+   DARK CINEMATIC OVERLAY
+========================================================= */
+
+.home-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3,3,3,0.94) 0%,
+            rgba(3,3,3,0.76) 38%,
+            rgba(3,3,3,0.25) 100%
+        ),
+
+        radial-gradient(
+            circle at 75% 50%,
+            transparent 0%,
+            rgba(0,0,0,0.65) 75%
+        );
+
+}
+
+
+/* =========================================================
+   GOLD LIGHT
+========================================================= */
+
+.home-gold-light {
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -180px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    filter: blur(160px);
+
+    opacity: 0.08;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.home-hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 850px;
+
+    padding: 100px 0;
+
+}
+
+
+/* =========================================================
+   HERO IMAGE ANIMATION
+========================================================= */
+
+@keyframes homeHeroMotion {
+
+    from {
+
+        transform: scale(1.04);
+
+    }
+
+    to {
+
+        transform: scale(1.09);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+/* =========================================================
+   FINAL NAVBAR RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-navbar {
+        height: 70px !important;
+        min-height: 70px !important;
+        padding: 0 !important;
+    }
+
+    .aurevia-navbar > .container-fluid {
+        height: 70px;
+        display: flex;
+        align-items: center;
+    }
+
+    .aurevia-navbar .logo {
+        width: 90px !important;
+        height: 45px !important;
+    }
+
+    .aurevia-navbar .navbar-collapse {
+        height: auto !important;
+
+        margin-top: 0 !important;
+        padding: 20px !important;
+
+        background: rgba(3, 3, 3, 0.98);
+
+        border: 1px solid rgba(200, 169, 107, 0.15);
+    }
+
+    .aurevia-navbar .navbar-nav {
+        height: auto !important;
+
+        display: flex;
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .aurevia-navbar {
+        height: 65px !important;
+        min-height: 65px !important;
+        padding: 0 !important;
+    }
+
+    .aurevia-navbar > .container-fluid {
+        height: 65px;
+    }
+
+    .aurevia-navbar .logo {
+        width: 85px !important;
+        height: 42px !important;
+    }
+
+}
+
+
+
+@media (max-width: 576px) {
+
+    .aurevia-home-hero {
+
+        min-height: 78vh;
+
+    }
+
+    .home-hero-content {
+
+        padding: 70px 0;
+
+    }
+
+    .home-hero-content h1 {
+
+        font-size: 52px;
+
+        letter-spacing: -2px;
+
+    }
+
+    .hero-description {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+
+
+.hero-eyebrow {
+
+    margin-bottom: 22px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+}
+
+
+.home-hero-content h1 {
+
+    max-width: 800px;
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+
+    font-size: clamp(50px, 7vw, 100px);
+
+    font-weight: 300;
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+}
+
+
+.home-hero-content h1 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.hero-description {
+
+    max-width: 520px;
+
+    margin-bottom: 35px;
+
+    color:
+        rgba(255,255,255,0.68);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* =========================================================
+   GOLD BUTTON
+========================================================= */
+
+.aurevia-gold-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 15px 23px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c8a96b,
+            #8d6c32
+        );
+
+    border:
+        1px solid var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.4),
+
+        0 0 20px
+        rgba(200,169,107,0.15);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+}
+
+
+.aurevia-gold-btn i {
+
+    font-size: 18px;
+
+}
+
+
+.aurevia-gold-btn:hover {
+
+    color: #ffffff;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.5),
+
+        0 0 35px
+        rgba(200,169,107,0.30);
+
+}
+
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.home-scroll-indicator {
+
+    position: absolute;
+
+    right: 45px;
+
+    bottom: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    writing-mode: vertical-rl;
+
+}
+
+
+.home-scroll-indicator i {
+
+    color: var(--gold);
+
+}
+
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.aurevia-intro {
+
+    padding: 130px 0;
+
+    background: #050505;
+
+}
+
+
+.section-label {
+
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+.aurevia-intro h2,
+.aurevia-experience h2 {
+
+    color: #ffffff;
+
+    font-size: clamp(40px, 5vw, 70px);
+
+    font-weight: 300;
+
+    line-height: 1;
+
+}
+
+
+.aurevia-intro h2 span,
+.aurevia-experience h2 span {
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.intro-text {
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    font-size: 26px;
+
+    line-height: 1.5;
+
+}
+
+
+.intro-subtext {
+
+    max-width: 650px;
+
+    margin-bottom: 30px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    line-height: 1.9;
+
+}
+
+
+.text-link {
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+}
+
+
+.text-link i {
+
+    margin-left: 8px;
+
+    transition: 0.3s ease;
+
+}
+
+
+.text-link:hover i {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+
+/* =========================================================
+   BRANDS
+========================================================= */
+
+.aurevia-brands {
+
+    padding: 130px 0;
+
+    background: #080808;
+
+}
+
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+
+.section-heading h2 {
+
+    color: #ffffff;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    font-weight: 300;
+
+}
+
+
+.section-heading h2 span {
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.section-heading > p:last-child {
+
+    color:
+        rgba(255,255,255,0.5);
+
+}
+
+
+
+/* =========================================================
+   BRAND CARD
+========================================================= */
+
+.brand-card {
+
+    position: relative;
+
+    display: block;
+
+    height: 430px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    border:
+        1px solid rgba(200,169,107,0.15);
+
+}
+
+
+.brand-card-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition:
+        transform 0.7s ease;
+
+}
+
+
+/*
+   Replace these image URLs with
+   your actual car images.
+*/
+
+
+
+
+
+
+
+
+
+.brand-card-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 30%,
+            rgba(0,0,0,0.9) 100%
+        );
+
+}
+
+
+.brand-card-content {
+
+    position: absolute;
+
+    left: 30px;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    z-index: 2;
+
+}
+
+
+.brand-card-content span {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.brand-card-content h3 {
+
+    margin:
+        8px 0 18px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+}
+
+
+.brand-card-content div {
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+}
+
+
+.brand-card-content i {
+
+    margin-left: 8px;
+
+}
+
+
+.brand-card:hover
+.brand-card-image {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+.brand-card:hover {
+
+    border-color:
+        rgba(240,209,138,0.55);
+
+}
+
+
+
+/* =========================================================
+   OUTLINE BUTTON
+========================================================= */
+
+.aurevia-outline-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 15px 25px;
+
+    color: var(--gold-light);
+
+    border:
+        1px solid rgba(200,169,107,0.5);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+
+}
+
+
+.aurevia-outline-btn:hover {
+
+    color: #ffffff;
+
+    border-color:
+        var(--gold-light);
+
+    box-shadow:
+        0 0 25px
+        rgba(200,169,107,0.15);
+
+}
+
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.aurevia-experience {
+
+    padding: 130px 0;
+
+    background: #030303;
+
+}
+
+
+.experience-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    border-top:
+        1px solid rgba(255,255,255,0.1);
+
+    border-left:
+        1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.experience-item {
+
+    padding: 35px;
+
+    border-right:
+        1px solid rgba(255,255,255,0.1);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.experience-item i {
+
+    color: var(--gold);
+
+    font-size: 28px;
+
+}
+
+
+.experience-item h4 {
+
+    margin-top: 20px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.experience-item p {
+
+    margin-top: 12px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.aurevia-final-cta {
+
+    position: relative;
+
+    padding: 150px 0;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(200,169,107,0.08),
+            transparent 45%
+        ),
+
+        #070707;
+
+}
+
+
+.aurevia-final-cta h2 {
+
+    margin-bottom: 40px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 6vw, 80px);
+
+    font-weight: 300;
+
+}
+
+
+.aurevia-final-cta h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.aurevia-footer {
+
+    padding: 45px 0;
+
+    background: #020202;
+
+    border-top:
+        1px solid rgba(200,169,107,0.15);
+
+}
+
+
+.aurevia-footer p {
+
+    margin-top: 15px;
+
+    color:
+        rgba(255,255,255,0.4);
+
+    font-size: 11px;
+
+}
+
+
+
+/* =========================================================
+   HERO ANIMATION
+========================================================= */
+
+@keyframes homeHeroZoom {
+
+    from {
+
+        transform:
+            scale(1.04);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.09);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-navbar {
+
+        padding: 15px 0;
+
+    }
+
+
+    .aurevia-navbar
+    .navbar-collapse {
+
+        margin-top: 20px;
+
+        padding: 20px;
+
+        background:
+            rgba(3,3,3,0.98);
+
+        border:
+            1px solid rgba(200,169,107,0.15);
+
+    }
+
+
+    .home-hero-content {
+
+        padding-top: 80px;
+
+    }
+
+
+    .home-scroll-indicator {
+
+        display: none;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .aurevia-home-hero {
+
+        min-height: 80vh;
+
+    }
+
+
+    .home-hero-content h1 {
+
+        font-size: 52px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 14px;
+
+    }
+
+
+    .aurevia-intro,
+    .aurevia-brands,
+    .aurevia-experience {
+
+        padding: 90px 0;
+
+    }
+
+
+    .brand-card {
+
+        height: 380px;
+
+    }
+
+
+    .experience-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .experience-item {
+
+        padding: 25px;
+
+    }
+
+}
+.brand-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-logo {
+    position: absolute;
+
+    right: 30px;
+    bottom: 20px;
+
+    width: 150px;
+    height: 110px;
+
+    object-fit: contain;
+
+    z-index: 5;
+
+    transition: all 0.4s ease;
+}
+
+
+
+/* About Page CSS */
+
+/* =========================================================
+   AUREVIA ABOUT PAGE
+========================================================= */
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+/* =========================================================
+   AUREVIA PREMIUM ABOUT PAGE
+========================================================= */
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.aurevia-about-main-hero {
+
+    position: relative;
+
+    min-height: 82vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #020202;
+
+}
+
+
+.about-main-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("../Images/Aurevia Motors Luxury Showroom Spectacle.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.04);
+
+    opacity: 0.8;
+
+    animation:
+        aboutHeroMotion 18s ease-in-out infinite alternate;
+        
+
+}
+
+
+.about-main-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3,3,3,0.94) 0%,
+            rgba(3,3,3,0.76) 38%,
+            rgba(3,3,3,0.25) 100%
+        ),
+
+        radial-gradient(
+            circle at 75% 50%,
+            transparent 0%,
+            rgba(0,0,0,0.65) 75%
+        );
+
+}
+
+
+.about-gold-orb {
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    right: -180px;
+
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    filter: blur(150px);
+
+    opacity: 0.10;
+
+}
+
+
+.about-main-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 850px;
+
+    padding: 100px 0;
+
+}
+
+
+.about-vertical-line {
+
+    width: 55px;
+
+    height: 1px;
+
+    margin-bottom: 25px;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 12px
+        rgba(240,209,138,0.6);
+
+}
+
+
+.about-eyebrow {
+
+    margin-bottom: 25px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+}
+
+
+.about-main-content h1 {
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(55px, 8vw, 110px);
+
+    font-weight: 200;
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+}
+
+
+.about-main-content h1 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.about-main-content > p:last-child {
+
+    max-width: 540px;
+
+    color:
+        rgba(255,255,255,0.62);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+.about-hero-bottom {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    z-index: 4;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.about-hero-bottom i {
+
+    color: var(--gold);
+
+}
+
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.aurevia-philosophy {
+
+    position: relative;
+
+    padding: 140px 0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(200,169,107,0.055),
+            transparent 35%
+        ),
+
+        #050505;
+
+}
+
+
+.about-section-label {
+
+    margin-bottom: 22px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+.aurevia-philosophy h2 {
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 5vw, 70px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+
+}
+
+
+.aurevia-philosophy h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.philosophy-lead {
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+
+    font-size: 27px;
+
+    line-height: 1.5;
+
+}
+
+
+.philosophy-text {
+
+    max-width: 680px;
+
+    margin-bottom: 18px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+}
+
+
+
+/* =========================================================
+   SHOWROOM FEATURE
+========================================================= */
+
+.aurevia-showroom-section {
+
+    padding: 0 0 140px;
+
+    background: #050505;
+
+}
+
+
+.showroom-feature {
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr 0.85fr;
+
+    min-height: 650px;
+
+    border:
+        1px solid rgba(200,169,107,0.18);
+
+    background: #080808;
+
+}
+
+
+.showroom-feature-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.showroom-feature-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 650px;
+
+    object-fit: cover;
+
+    filter:
+        brightness(0.70)
+        contrast(1.10);
+
+    transition:
+        transform 1s ease;
+
+}
+
+
+.showroom-feature:hover
+.showroom-feature-image img {
+
+    transform: scale(1.04);
+
+}
+
+
+.showroom-image-shine {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 50%,
+            rgba(200,169,107,0.08)
+        );
+
+}
+
+
+.showroom-feature-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px;
+
+    background:
+
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(200,169,107,0.09),
+            transparent 45%
+        ),
+
+        #080808;
+
+}
+
+
+.showroom-feature-content h2 {
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(40px, 4vw, 65px);
+
+    font-weight: 200;
+
+    line-height: 0.98;
+
+}
+
+
+.showroom-feature-content h2 span {
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.showroom-feature-content > p {
+
+    max-width: 500px;
+
+    color:
+        rgba(255,255,255,0.52);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+}
+
+
+.showroom-points {
+
+    margin-top: 25px;
+
+}
+
+
+.showroom-points div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
+    color:
+        rgba(255,255,255,0.72);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.showroom-points i {
+
+    color: var(--gold);
+
+    font-size: 18px;
+
+}
+
+
+
+/* =========================================================
+   DIFFERENCE
+========================================================= */
+
+.aurevia-difference {
+
+    padding: 140px 0;
+
+    background: #080808;
+
+}
+
+
+.difference-title {
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 5vw, 70px);
+
+    font-weight: 200;
+
+}
+
+
+.difference-title span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.difference-description {
+
+    max-width: 620px;
+
+    margin: 20px auto 70px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    line-height: 1.8;
+
+}
+
+
+.difference-grid {
+
+    border-top:
+        1px solid rgba(200,169,107,0.20);
+
+    border-left:
+        1px solid rgba(200,169,107,0.20);
+
+}
+
+
+.difference-item {
+
+    position: relative;
+
+    height: 100%;
+
+    min-height: 300px;
+
+    padding: 40px 30px;
+
+    border-right:
+        1px solid rgba(200,169,107,0.20);
+
+    border-bottom:
+        1px solid rgba(200,169,107,0.20);
+
+    transition:
+        background 0.4s ease;
+
+}
+
+
+.difference-item:hover {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(200,169,107,0.07),
+            transparent
+        );
+
+}
+
+
+.difference-number {
+
+    display: block;
+
+    margin-bottom: 55px;
+
+    color:
+        rgba(240,209,138,0.40);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.difference-item i {
+
+    color: var(--gold-light);
+
+    font-size: 28px;
+
+}
+
+
+.difference-item h3 {
+
+    margin:
+        25px 0 12px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.difference-item p {
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* =========================================================
+   BRANDS
+========================================================= */
+
+.aurevia-about-brands {
+
+    padding: 140px 0;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(200,169,107,0.06),
+            transparent 55%
+        ),
+
+        #030303;
+
+}
+
+
+.brands-intro {
+
+    text-align: center;
+
+}
+
+
+.brands-intro h2 {
+
+    max-width: 900px;
+
+    margin:
+        0 auto 25px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(40px, 5vw, 72px);
+
+    font-weight: 200;
+
+    line-height: 1;
+
+}
+
+
+.brands-intro h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.brands-intro > p:last-child {
+
+    max-width: 600px;
+
+    margin:
+        0 auto 60px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    line-height: 1.8;
+
+}
+
+
+.luxury-brands {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px 50px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.luxury-brands span {
+
+    position: relative;
+
+    color:
+        rgba(255,255,255,0.50);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.luxury-brands span::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 4px;
+
+    height: 4px;
+
+    margin-right: 12px;
+
+    vertical-align: middle;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+}
+
+
+.luxury-brands span:hover {
+
+    color: var(--gold-light);
+
+    transform: translateY(-3px);
+
+}
+
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.aurevia-about-closing {
+
+    position: relative;
+
+    padding: 170px 0;
+
+    overflow: hidden;
+
+    background: #050505;
+
+}
+
+
+.closing-glow {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 500px;
+
+    height: 500px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    filter: blur(180px);
+
+    opacity: 0.07;
+
+}
+
+
+.aurevia-about-closing
+.container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.aurevia-about-closing h2 {
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(45px, 6vw, 85px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+
+}
+
+
+.aurevia-about-closing h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+.aurevia-about-closing
+.container > p:not(.about-section-label) {
+
+    max-width: 550px;
+
+    margin:
+        0 auto 40px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    line-height: 1.8;
+
+}
+
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes aboutHeroMotion {
+
+    from {
+
+        transform:
+            scale(1.04);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.09);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .showroom-feature {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .showroom-feature-image img {
+
+        min-height: 450px;
+
+    }
+
+
+    .showroom-feature-content {
+
+        padding: 55px 40px;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .aurevia-about-main-hero {
+
+        min-height: 78vh;
+
+    }
+
+
+    .about-main-content {
+
+        padding:
+            70px 0;
+
+    }
+
+
+    .about-main-content h1 {
+
+        font-size: 52px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .about-main-content > p:last-child {
+
+        font-size: 14px;
+
+    }
+
+
+    .aurevia-philosophy,
+    .aurevia-difference,
+    .aurevia-about-brands {
+
+        padding: 90px 0;
+
+    }
+
+
+    .showroom-feature-image img {
+
+        min-height: 320px;
+
+    }
+
+
+    .showroom-feature-content {
+
+        padding: 45px 25px;
+
+    }
+
+
+    .difference-item {
+
+        min-height: 260px;
+
+        padding: 30px 25px;
+
+    }
+
+
+    .luxury-brands {
+
+        gap: 20px;
+
+    }
+
+
+    .luxury-brands span {
+
+        font-size: 10px;
+
+    }
+
+
+    .aurevia-about-closing {
+
+        padding: 110px 20px;
+
+    }
+
+}
+
+/* =========================================================
+   FINAL GLOBAL NAVBAR FIX
+   SAME SIZE ON HOME + ABOUT
+========================================================= */
+
+.aurevia-navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    min-height: 80px;
+
+    padding: 0 !important;
+
+    background: rgba(3, 3, 3, 0.92);
+
+    border-bottom: 1px solid rgba(200, 169, 107, 0.20);
+
+    backdrop-filter: blur(18px);
+
+    z-index: 1000;
+}
+
+
+/* CONTAINER */
+
+.aurevia-navbar > .container-fluid {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+/* LOGO */
+
+.aurevia-navbar .navbar-brand,
+.aurevia-navbar .aurevia-logo {
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.aurevia-navbar .logo {
+    width: 100px !important;
+    height: 50px !important;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* NAVIGATION */
+
+.aurevia-navbar .navbar-collapse {
+    height: 100%;
+}
+
+.aurevia-navbar .navbar-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.aurevia-navbar .aurevia-nav-link {
+    position: relative;
+
+    padding: 10px 0 !important;
+    margin: 0 !important;
+
+    color: rgba(255,255,255,0.72) !important;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+
+.aurevia-navbar .aurevia-nav-link:hover,
+.aurevia-navbar .aurevia-nav-link.active {
+    color: var(--gold-light) !important;
+}
+
+
+/* GOLD UNDERLINE */
+
+.aurevia-navbar .aurevia-nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 8px rgba(240,209,138,0.7);
+
+    transition: 0.3s ease;
+}
+
+
+.aurevia-navbar .aurevia-nav-link:hover::after,
+.aurevia-navbar .aurevia-nav-link.active::after {
+    width: 100%;
+}
+
+
+/* MOBILE BUTTON */
+
+.aurevia-navbar .navbar-toggler {
+    border: 1px solid rgba(200,169,107,0.4);
+    padding: 6px 9px;
+}
+
+
+.aurevia-navbar .navbar-toggler i {
+    color: var(--gold-light);
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-navbar {
+        height: 70px;
+        min-height: 70px;
+    }
+
+    .aurevia-navbar .logo {
+        width: 90px !important;
+        height: 45px !important;
+    }
+
+    .aurevia-navbar .navbar-collapse {
+        height: auto;
+        margin-top: 0;
+        padding: 20px;
+
+        background: rgba(3,3,3,0.98);
+
+        border: 1px solid rgba(200,169,107,0.15);
+    }
+
+    .aurevia-navbar .navbar-nav {
+        height: auto;
+        align-items: flex-start;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 576px) {
+
+    .aurevia-navbar {
+        height: 65px;
+        min-height: 65px;
+    }
+
+    .aurevia-navbar .logo {
+        width: 85px !important;
+        height: 42px !important;
+    }
+
+}
+
+/* =========================================================
+   OUR STORY
+========================================================= */
+
+.aurevia-story {
+
+    padding: 140px 0;
+
+    background:
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(200,169,107,0.06),
+            transparent 40%
+        ),
+        #030303;
+}
+
+.story-title {
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 5vw, 70px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+.story-title span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+.story-lead {
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+
+    font-size: 26px;
+
+    line-height: 1.5;
+}
+
+.story-text {
+
+    max-width: 680px;
+
+    margin-bottom: 18px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+
+/* =========================================================
+   AUREVIA EXPERIENCE INFO
+========================================================= */
+
+.aurevia-experience-info {
+
+    padding: 140px 0;
+
+    background: #050505;
+}
+
+.aurevia-experience-info h2 {
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 5vw, 70px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+.aurevia-experience-info h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+.experience-info-lead {
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    line-height: 1.5;
+}
+
+.experience-info-text {
+
+    max-width: 550px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* TIMELINE */
+
+.experience-timeline {
+
+    border-left:
+        1px solid rgba(200,169,107,0.25);
+}
+
+.timeline-item {
+
+    display: flex;
+
+    gap: 25px;
+
+    padding: 25px 0 25px 30px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.timeline-item > span {
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.timeline-item h4 {
+
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.timeline-item p {
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   WHY AUREVIA
+========================================================= */
+
+.aurevia-why {
+
+    padding: 140px 0;
+
+    background: #080808;
+}
+
+.why-title {
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 5vw, 70px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+.why-title span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+.why-card {
+
+    position: relative;
+
+    min-height: 330px;
+
+    padding: 35px 30px;
+
+    background: #050505;
+
+    border:
+        1px solid rgba(200,169,107,0.18);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.why-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(240,209,138,0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(200,169,107,0.08),
+            transparent
+        );
+}
+
+.why-number {
+
+    display: block;
+
+    margin-bottom: 55px;
+
+    color:
+        rgba(240,209,138,0.40);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.why-card i {
+
+    color: var(--gold-light);
+
+    font-size: 28px;
+}
+
+.why-card h3 {
+
+    margin: 25px 0 15px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.why-card p {
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   OUR VISION
+========================================================= */
+
+.aurevia-vision {
+
+    position: relative;
+
+    padding: 160px 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200,169,107,0.08),
+            transparent 45%
+        ),
+        #030303;
+}
+
+.aurevia-vision h2 {
+
+    max-width: 900px;
+
+    margin: 0 auto 30px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(45px, 6vw, 85px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+.aurevia-vision h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+.vision-text {
+
+    max-width: 650px;
+
+    margin: 0 auto 45px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+.vision-line {
+
+    width: 70px;
+
+    height: 1px;
+
+    margin: 0 auto 35px;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 12px rgba(240,209,138,0.6);
+}
+
+.vision-quote {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color:
+        rgba(240,209,138,0.75);
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE - NEW ABOUT SECTIONS
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-story,
+    .aurevia-experience-info,
+    .aurevia-why {
+
+        padding: 100px 0;
+    }
+
+    .aurevia-vision {
+
+        padding: 120px 0;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .aurevia-story,
+    .aurevia-experience-info,
+    .aurevia-why {
+
+        padding: 90px 0;
+    }
+
+    .story-lead {
+
+        font-size: 21px;
+    }
+
+    .experience-info-lead {
+
+        font-size: 20px;
+    }
+
+    .why-card {
+
+        min-height: 290px;
+
+        padding: 30px 25px;
+    }
+
+    .aurevia-vision {
+
+        padding: 100px 20px;
+    }
+
+    .vision-quote {
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* contact Page */
+
+
+/* =========================================================
+   CONTACT HERO
+========================================================= */
+
+/* =========================================================
+   CONTACT HERO
+   SAME PREMIUM IMAGE STYLE AS ABOUT PAGE
+========================================================= */
+
+.aurevia-contact-hero {
+
+    position: relative;
+
+    min-height: 82vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #020202;
+
+}
+
+
+/* =========================================================
+   CONTACT BACKGROUND IMAGE
+========================================================= */
+
+.contact-main-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("../Images/Aurevia Motors Luxury Showroom Spectacle.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    transform: scale(1.04);
+
+    opacity: 0.80;
+
+    animation:
+        contactHeroMotion
+        18s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+/* =========================================================
+   DARK CINEMATIC OVERLAY
+========================================================= */
+
+.contact-main-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3,3,3,0.94) 0%,
+            rgba(3,3,3,0.76) 38%,
+            rgba(3,3,3,0.25) 100%
+        ),
+
+        radial-gradient(
+            circle at 75% 50%,
+            transparent 0%,
+            rgba(0,0,0,0.65) 75%
+        );
+
+}
+
+
+/* =========================================================
+   GOLD GLOW
+========================================================= */
+
+.contact-gold-orb {
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -180px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    filter: blur(150px);
+
+    opacity: 0.10;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   CONTACT HERO CONTENT
+========================================================= */
+
+.contact-hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 850px;
+
+    padding: 100px 0;
+
+}
+
+
+/* GOLD LINE */
+
+.contact-vertical-line {
+
+    width: 55px;
+
+    height: 1px;
+
+    margin-bottom: 25px;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 12px
+        rgba(240,209,138,0.6);
+
+}
+
+
+/* EYEBROW */
+
+.contact-eyebrow {
+
+    margin-bottom: 25px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* HEADING */
+
+.contact-hero-content h1 {
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(55px, 8vw, 110px);
+
+    font-weight: 200;
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+}
+
+
+/* GOLD HEADING */
+
+.contact-hero-content h1 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+
+}
+
+
+/* DESCRIPTION */
+
+.contact-hero-content > p:last-child {
+
+    max-width: 600px;
+
+    color:
+        rgba(255,255,255,0.60);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   BOTTOM SCROLL INDICATOR
+========================================================= */
+
+.contact-hero-bottom {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    z-index: 4;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+.contact-hero-bottom i {
+
+    color: var(--gold);
+
+}
+
+
+/* =========================================================
+   HERO IMAGE ANIMATION
+========================================================= */
+
+@keyframes contactHeroMotion {
+
+    from {
+
+        transform: scale(1.04);
+
+    }
+
+    to {
+
+        transform: scale(1.09);
+
+    }
+
+}
+
+
+/* =========================================================
+   CONTACT HERO RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-contact-hero {
+
+        min-height: 70vh;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .aurevia-contact-hero {
+
+        min-height: 78vh;
+
+    }
+
+    .contact-hero-content {
+
+        padding: 70px 0;
+
+    }
+
+    .contact-hero-content h1 {
+
+        font-size: 52px;
+
+        letter-spacing: -2px;
+
+    }
+
+    .contact-hero-content > p:last-child {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+.contact-hero-glow {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -180px;
+    top: 10%;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    filter: blur(180px);
+
+    opacity: 0.08;
+
+    pointer-events: none;
+}
+
+
+.contact-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    padding: 100px 0;
+}
+
+
+.contact-vertical-line {
+
+    width: 55px;
+    height: 1px;
+
+    margin-bottom: 25px;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 12px rgba(240,209,138,0.6);
+}
+
+
+.contact-eyebrow {
+
+    margin-bottom: 25px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+}
+
+
+.contact-hero-content h1 {
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(55px, 8vw, 110px);
+
+    font-weight: 200;
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+}
+
+
+.contact-hero-content h1 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.contact-hero-content > p:last-child {
+
+    max-width: 600px;
+
+    color:
+        rgba(255,255,255,0.60);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.contact-hero-bottom {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+.contact-hero-bottom i {
+
+    color: var(--gold);
+}
+
+
+
+/* =========================================================
+   CONTACT MAIN
+========================================================= */
+
+.aurevia-contact-main {
+
+    padding: 140px 0;
+
+    background: #050505;
+}
+
+
+.contact-section-label {
+
+    margin-bottom: 22px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.contact-main-title {
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 5vw, 70px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+
+.contact-main-title span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.contact-description {
+
+    max-width: 520px;
+
+    margin-bottom: 18px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.contact-details {
+
+    margin-top: 45px;
+}
+
+
+.contact-detail-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+}
+
+
+.contact-icon {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(200,169,107,0.30);
+
+    color: var(--gold-light);
+
+    font-size: 18px;
+}
+
+
+.contact-detail-item span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.contact-detail-item p {
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.70);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.aurevia-contact-form {
+
+    padding: 50px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(200,169,107,0.08),
+            transparent 40%
+        ),
+        #080808;
+
+    border:
+        1px solid rgba(200,169,107,0.18);
+}
+
+
+
+.form-heading {
+
+    margin-bottom: 40px;
+}
+
+
+.form-heading > p {
+
+    margin-bottom: 12px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.form-heading h3 {
+
+    color: #ffffff;
+
+    font-size: 35px;
+
+    font-weight: 200;
+
+    letter-spacing: -1px;
+}
+
+
+.form-heading h3 span {
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+
+/* INPUT */
+
+.contact-input label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255,255,255,0.50);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+.contact-input input,
+.contact-input select,
+.contact-input textarea {
+
+    width: 100%;
+
+    padding: 15px 0;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.15);
+
+    outline: none;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.3s ease;
+}
+
+
+.contact-input input::placeholder,
+.contact-input textarea::placeholder {
+
+    color:
+        rgba(255,255,255,0.25);
+}
+
+
+.contact-input input:focus,
+.contact-input select:focus,
+.contact-input textarea:focus {
+
+    border-bottom-color:
+        var(--gold-light);
+}
+
+
+.contact-input select {
+
+    color:
+        rgba(255,255,255,0.55);
+}
+
+
+.contact-input select option {
+
+    color: #ffffff;
+
+    background: #080808;
+}
+
+
+.contact-input textarea {
+
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.contact-submit-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 15px;
+
+    padding: 15px 25px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c8a96b,
+            #8d6c32
+        );
+
+    border:
+        1px solid var(--gold-light);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.contact-submit-btn i {
+
+    font-size: 16px;
+}
+
+
+.contact-submit-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.5),
+        0 0 35px rgba(200,169,107,0.30);
+}
+
+
+
+/* =========================================================
+   CONTACT SERVICES
+========================================================= */
+
+.aurevia-contact-services {
+
+    padding: 140px 0;
+
+    background: #080808;
+}
+
+
+.aurevia-contact-services h2 {
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 5vw, 70px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+
+.aurevia-contact-services h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.contact-service-card {
+
+    min-height: 300px;
+
+    padding: 35px 30px;
+
+    background: #050505;
+
+    border:
+        1px solid rgba(200,169,107,0.18);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+.contact-service-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(240,209,138,0.55);
+}
+
+
+.contact-service-card > span {
+
+    display: block;
+
+    margin-bottom: 45px;
+
+    color:
+        rgba(240,209,138,0.40);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.contact-service-card i {
+
+    color: var(--gold-light);
+
+    font-size: 28px;
+}
+
+
+.contact-service-card h3 {
+
+    margin: 25px 0 15px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+.contact-service-card p {
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.aurevia-contact-location {
+
+    padding: 0 0 140px;
+
+    background: #080808;
+}
+
+
+.contact-location-box {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 550px;
+
+    border:
+        1px solid rgba(200,169,107,0.18);
+}
+
+
+.contact-location-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px;
+
+    background:
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(200,169,107,0.08),
+            transparent 40%
+        ),
+        #050505;
+}
+
+
+.contact-location-content h2 {
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 5vw, 70px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+
+.contact-location-content h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.contact-location-content > p {
+
+    max-width: 500px;
+
+    margin-bottom: 30px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+.location-info {
+
+    margin-bottom: 35px;
+}
+
+
+.location-info div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 0;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 12px;
+}
+
+
+.location-info i {
+
+    color: var(--gold);
+
+    font-size: 18px;
+}
+
+
+
+/* LOCATION VISUAL */
+
+.contact-location-visual {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200,169,107,0.12),
+            transparent 45%
+        ),
+        #030303;
+}
+
+
+.location-glow {
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    filter: blur(130px);
+
+    opacity: 0.08;
+}
+
+
+.contact-location-visual > i {
+
+    position: relative;
+
+    color: var(--gold-light);
+
+    font-size: 70px;
+
+    text-shadow:
+        0 0 30px rgba(240,209,138,0.35);
+
+    animation:
+        locationPulse 3s ease-in-out infinite;
+}
+
+
+.contact-location-visual > span {
+
+    position: relative;
+
+    margin-top: 25px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+.contact-location-visual > small {
+
+    position: relative;
+
+    margin-top: 10px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+}
+
+
+@keyframes locationPulse {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   FINAL CONTACT CTA
+========================================================= */
+
+.aurevia-contact-closing {
+
+    position: relative;
+
+    padding: 160px 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200,169,107,0.08),
+            transparent 45%
+        ),
+        #030303;
+}
+
+
+.contact-closing-glow {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 450px;
+    height: 450px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    filter: blur(180px);
+
+    opacity: 0.06;
+}
+
+
+.aurevia-contact-closing .container {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.aurevia-contact-closing h2 {
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(45px, 6vw, 85px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+
+.aurevia-contact-closing h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.aurevia-contact-closing > .container > p:not(.contact-section-label) {
+
+    max-width: 550px;
+
+    margin: 0 auto 40px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   CONTACT RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-contact-hero {
+
+        min-height: 65vh;
+    }
+
+    .aurevia-contact-main {
+
+        padding: 100px 0;
+    }
+
+    .aurevia-contact-form {
+
+        padding: 40px;
+    }
+
+    .contact-location-box {
+
+        grid-template-columns: 1fr;
+    }
+
+    .contact-location-visual {
+
+        min-height: 400px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .aurevia-contact-hero {
+
+        min-height: 70vh;
+    }
+
+    .contact-hero-content {
+
+        padding: 80px 0;
+    }
+
+    .contact-hero-content h1 {
+
+        font-size: 52px;
+
+        letter-spacing: -2px;
+    }
+
+    .contact-hero-content > p:last-child {
+
+        font-size: 14px;
+    }
+
+    .aurevia-contact-main,
+    .aurevia-contact-services {
+
+        padding: 90px 0;
+    }
+
+    .aurevia-contact-form {
+
+        padding: 30px 20px;
+    }
+
+    .form-heading h3 {
+
+        font-size: 28px;
+    }
+
+    .contact-location-content {
+
+        padding: 45px 25px;
+    }
+
+    .contact-location-visual {
+
+        min-height: 320px;
+    }
+
+    .aurevia-contact-location {
+
+        padding-bottom: 90px;
+    }
+
+    .aurevia-contact-closing {
+
+        padding: 110px 20px;
+    }
+
+}
+
+
+
+/* cars css page */
+
+
+/* =========================================================
+   AUREVIA CARS PAGE
+========================================================= */
+
+
+/* =========================================================
+   CARS HERO
+========================================================= */
+
+.aurevia-cars-hero {
+
+    position: relative;
+
+    min-height: 82vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #020202;
+}
+
+
+/* HERO IMAGE */
+
+.cars-hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("../Images/Aurevia Motors Luxury Showroom Spectacle.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    transform: scale(1.04);
+
+    opacity: 0.78;
+
+    animation:
+        carsHeroMotion
+        18s
+        ease-in-out
+        infinite
+        alternate;
+
+    z-index: 0;
+}
+
+
+/* DARK OVERLAY */
+
+.cars-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,3,3,0.96) 0%,
+            rgba(3,3,3,0.78) 38%,
+            rgba(3,3,3,0.30) 72%,
+            rgba(3,3,3,0.72) 100%
+        );
+}
+
+
+/* GOLD GLOW */
+
+.cars-gold-glow {
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    right: -160px;
+
+    top: 20%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(200,169,107,0.20),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* HERO CONTENT */
+
+.cars-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+
+    padding-top: 40px;
+}
+
+
+.cars-vertical-line {
+
+    width: 1px;
+
+    height: 80px;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--gold-light)
+        );
+}
+
+
+.cars-eyebrow {
+
+    margin-bottom: 20px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+}
+
+
+.cars-hero-content h1 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(55px, 8vw, 110px);
+
+    font-weight: 200;
+
+    line-height: 0.88;
+
+    letter-spacing: -3px;
+}
+
+
+.cars-hero-content h1 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.cars-hero-description {
+
+    max-width: 560px;
+
+    margin-top: 35px;
+
+    color: rgba(255,255,255,0.58);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+.cars-hero-meta {
+
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 40px;
+
+    color: rgba(255,255,255,0.42);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+/* SCROLL INDICATOR */
+
+.cars-scroll-indicator {
+
+    position: absolute;
+
+    right: 50px;
+
+    bottom: 40px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.cars-scroll-indicator i {
+
+    color: var(--gold-light);
+
+    font-size: 18px;
+
+    animation:
+        carsArrowMove
+        1.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   COLLECTION INTRO
+========================================================= */
+
+.aurevia-collection-intro {
+
+    padding: 130px 0 80px;
+
+    background: #030303;
+}
+
+
+.collection-intro-content {
+
+    max-width: 800px;
+}
+
+
+.cars-section-label {
+
+    margin-bottom: 20px;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+.collection-intro-content h2 {
+
+    color: #ffffff;
+
+    font-size:
+        clamp(40px, 6vw, 75px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+
+.collection-intro-content h2 span {
+
+    display: block;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.collection-intro-content > p:last-child {
+
+    max-width: 650px;
+
+    color: rgba(255,255,255,0.48);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   BRAND COLLECTION
+========================================================= */
+
+.aurevia-brand-collection {
+
+    padding: 40px 0 140px;
+
+    background: #030303;
+}
+
+
+/* CARD LINK */
+
+.brand-card-link {
+
+    display: block;
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+/* CARD */
+
+.aurevia-brand-card {
+
+    position: relative;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    background: #080808;
+
+    border: 1px solid rgba(200,169,107,0.18);
+
+    transition:
+        transform 0.6s ease,
+        border-color 0.6s ease,
+        box-shadow 0.6s ease;
+}
+
+
+.aurevia-brand-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(200,169,107,0.65);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.65),
+        0 0 35px rgba(200,169,107,0.08);
+}
+
+
+/* IMAGE */
+
+.brand-card-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+
+.brand-card-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1s ease,
+        filter 0.8s ease;
+}
+
+
+.aurevia-brand-card:hover
+.brand-card-image img {
+
+    transform: scale(1.08);
+
+    filter:
+        brightness(0.78)
+        saturate(1.1);
+}
+
+
+/* CARD OVERLAY */
+
+.brand-card-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(3,3,3,0.05) 20%,
+            rgba(3,3,3,0.35) 45%,
+            rgba(3,3,3,0.96) 100%
+        );
+
+    z-index: 1;
+
+    transition:
+        background 0.6s ease;
+}
+
+
+.aurevia-brand-card:hover
+.brand-card-overlay {
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(3,3,3,0.05) 10%,
+            rgba(3,3,3,0.25) 35%,
+            rgba(3,3,3,0.98) 100%
+        );
+}
+
+
+/* CONTENT */
+
+.brand-card-content {
+
+    position: absolute;
+
+    left: 32px;
+
+    right: 32px;
+
+    bottom: 30px;
+
+    z-index: 2;
+}
+
+
+.brand-number {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+.brand-card-content h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+
+.brand-card-content p {
+
+    margin-top: 8px;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.brand-explore {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    padding-bottom: 7px;
+
+    border-bottom:
+        1px solid rgba(240,209,138,0.5);
+
+    color: var(--gold-light);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.4s ease;
+}
+
+
+.brand-explore i {
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.aurevia-brand-card:hover
+.brand-explore {
+
+    border-color: var(--gold-light);
+
+}
+
+
+.aurevia-brand-card:hover
+.brand-explore i {
+
+    transform:
+        translate(4px, -4px);
+}
+
+
+/* =========================================================
+   STATEMENT
+========================================================= */
+
+.aurevia-cars-statement {
+
+    position: relative;
+
+    padding: 150px 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200,169,107,0.07),
+            transparent 55%
+        ),
+        #020202;
+
+    border-top:
+        1px solid rgba(200,169,107,0.10);
+}
+
+
+.aurevia-cars-statement h2 {
+
+    color: #ffffff;
+
+    font-size:
+        clamp(42px, 6vw, 75px);
+
+    font-weight: 200;
+
+    line-height: 0.95;
+}
+
+
+.aurevia-cars-statement h2 span {
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.aurevia-cars-statement p:last-child {
+
+    margin-top: 25px;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes carsHeroMotion {
+
+    0% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1.09);
+    }
+
+}
+
+
+@keyframes carsArrowMove {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .aurevia-cars-hero {
+
+        min-height: 75vh;
+    }
+
+
+    .cars-hero-content {
+
+        padding:
+            70px 20px 40px;
+    }
+
+
+    .cars-scroll-indicator {
+
+        right: 25px;
+
+        bottom: 25px;
+    }
+
+
+    .aurevia-brand-card {
+
+        height: 450px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .aurevia-cars-hero {
+
+        min-height: 75vh;
+    }
+
+
+    .cars-hero-content h1 {
+
+        font-size: 58px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .cars-hero-description {
+
+        font-size: 14px;
+    }
+
+
+    .cars-hero-meta {
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .cars-scroll-indicator {
+
+        display: none;
+    }
+
+
+    .aurevia-collection-intro {
+
+        padding:
+            90px 0 50px;
+    }
+
+
+    .aurevia-brand-collection {
+
+        padding:
+            30px 0 90px;
+    }
+
+
+    .aurevia-brand-card {
+
+        height: 420px;
+    }
+
+
+    .brand-card-content {
+
+        left: 24px;
+
+        right: 24px;
+
+        bottom: 24px;
+    }
+
+
+    .brand-card-content h3 {
+
+        font-size: 28px;
+    }
+
+}

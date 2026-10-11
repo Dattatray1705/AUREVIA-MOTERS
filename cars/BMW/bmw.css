@@ -1,0 +1,998 @@
+/* =====================================================
+   AUREVIA MOTORS
+   BMW COLLECTION PAGE
+===================================================== */
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --black: #030303;
+    --black-soft: #090909;
+
+    --gold: #c8a96b;
+    --gold-light: #f0d18a;
+    --gold-dark: #745525;
+
+    --white: #ffffff;
+
+    --text-muted: rgba(255, 255, 255, 0.62);
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.aurevia-navbar {
+
+    position: sticky;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 80px;
+
+    min-height: 80px;
+
+    padding: 0 !important;
+
+    background:
+        rgba(3, 3, 3, 0.94);
+
+    border-bottom:
+        1px solid
+        rgba(200, 169, 107, 0.20);
+
+    backdrop-filter:
+        blur(18px);
+
+    z-index: 1000;
+
+}
+
+
+.aurevia-navbar > .container-fluid {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+/* Logo */
+
+.aurevia-navbar .logo {
+
+    width: 100px !important;
+
+    height: 50px !important;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+/* Navigation */
+
+.aurevia-navbar .aurevia-nav-link {
+
+    position: relative;
+
+    padding:
+        10px 0 !important;
+
+    margin: 0 !important;
+
+    color:
+        rgba(255, 255, 255, 0.72)
+        !important;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition:
+        0.3s ease;
+
+}
+
+
+/* Hover + Active */
+
+.aurevia-navbar
+.aurevia-nav-link:hover,
+
+.aurevia-navbar
+.aurevia-nav-link.active {
+
+    color:
+        var(--gold-light)
+        !important;
+
+}
+
+
+/* Underline */
+
+.aurevia-navbar
+.aurevia-nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 2px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        var(--gold-light);
+
+    box-shadow:
+        0 0 8px
+        rgba(240, 209, 138, 0.7);
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.aurevia-navbar
+.aurevia-nav-link:hover::after,
+
+.aurevia-navbar
+.aurevia-nav-link.active::after {
+
+    width: 100%;
+
+}
+
+
+/* Toggle */
+
+.aurevia-navbar .navbar-toggler {
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.4);
+
+    padding:
+        6px 9px;
+
+}
+
+
+.aurevia-navbar
+.navbar-toggler:focus {
+
+    box-shadow:
+        0 0 0 2px
+        rgba(200, 169, 107, 0.12);
+
+}
+
+
+.aurevia-navbar
+.navbar-toggler i {
+
+    color:
+        var(--gold-light);
+
+    font-size: 24px;
+
+}
+
+
+/* =====================================================
+   BMW HERO
+===================================================== */
+
+.bmw-hero {
+    position: relative;
+    height: 45vh;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #020202;
+}
+
+
+/* Background */
+
+.bmw-hero-image {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        url("https://i.pinimg.com/736x/35/d5/b2/35d5b28e54ce5277da445265f99ebf49.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: scale(1.04);
+
+    animation:
+        bmwHeroMotion
+        18s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+/* =====================================================
+   BACK TO CARS BUTTON
+===================================================== */
+
+.bmw-back-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+    margin-top: 15px;
+
+    margin-bottom: 35px;
+
+    padding: 11px 18px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid
+        rgba(200, 169, 107, 0.35);
+
+    background:
+        rgba(3, 3, 3, 0.35);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.35s ease;
+}
+
+
+/* Arrow */
+
+.bmw-back-btn i {
+
+    color: var(--gold-light);
+
+    font-size: 14px;
+
+    transition: 0.35s ease;
+}
+
+
+/* Hover */
+
+.bmw-back-btn:hover {
+
+    color: var(--gold-light);
+
+    border-color:
+        var(--gold-light);
+
+    background:
+        rgba(200, 169, 107, 0.08);
+
+    box-shadow:
+        0 0 20px
+        rgba(200, 169, 107, 0.12);
+
+}
+
+
+/* Arrow movement */
+
+.bmw-back-btn:hover i {
+
+    transform:
+        translateX(-5px);
+
+}
+
+/* Dark overlay */
+
+.bmw-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.92),
+            rgba(0,0,0,0.50),
+            rgba(0,0,0,0.80)
+        ),
+
+        linear-gradient(
+            0deg,
+            #030303 0%,
+            transparent 65%
+        );
+
+}
+
+
+/* Hero content */
+
+.bmw-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 92%;
+
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding:
+        100px 0
+        75px;
+
+}
+
+
+/* Eyebrow */
+
+.bmw-eyebrow {
+
+    color:
+        var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* BMW title */
+
+.bmw-title {
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            58px,
+            10vw,
+            125px
+        );
+
+    line-height: 0.86;
+
+    font-weight: 300;
+
+    letter-spacing: -5px;
+
+}
+
+
+.bmw-title span {
+
+    color:
+        var(--gold-light);
+
+}
+
+
+/* Subtitle */
+
+.bmw-subtitle {
+
+    margin-top: 28px;
+
+    color:
+        var(--text-muted);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =====================================================
+   MODELS SECTION
+===================================================== */
+
+.bmw-models {
+
+    width: 92%;
+
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding:
+        90px 0
+        110px;
+
+}
+
+
+/* Section heading */
+
+.bmw-section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 45px;
+
+}
+
+
+/* Small label */
+
+.bmw-section-label {
+
+    color:
+        var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* Heading */
+
+.bmw-section-heading h2 {
+
+    margin-top: 10px;
+
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            50px
+        );
+
+    font-weight: 300;
+
+}
+
+
+.bmw-section-heading h2 span {
+
+    color:
+        var(--gold-light);
+
+}
+
+
+/* Description */
+
+.bmw-section-description {
+
+    max-width: 450px;
+
+    color:
+        var(--text-muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   MODEL CARD
+===================================================== */
+
+.bmw-model-card {
+
+    position: relative;
+
+    display: block;
+
+    height: 430px;
+
+    overflow: hidden;
+
+    background:
+        var(--black-soft);
+
+    border:
+        1px solid
+        rgba(200, 169, 107, 0.25);
+
+    color:
+        var(--white);
+
+    transition:
+        0.45s ease;
+
+}
+
+
+/* Hover */
+
+.bmw-model-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(240, 209, 138, 0.80);
+
+    box-shadow:
+
+        0 20px 55px
+        rgba(0,0,0,0.55),
+
+        0 0 28px
+        rgba(200,169,107,0.12);
+
+}
+
+
+/* =====================================================
+   MODEL IMAGE
+===================================================== */
+
+.bmw-model-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        #111;
+
+}
+
+
+.bmw-model-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.78;
+
+    transition:
+        0.6s ease;
+
+}
+
+
+/* Image hover */
+
+.bmw-model-card:hover
+.bmw-model-image img {
+
+    transform:
+        scale(1.08);
+
+    opacity: 1;
+
+}
+
+
+/* =====================================================
+   CARD OVERLAY
+===================================================== */
+
+.bmw-model-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.25) 35%,
+            rgba(0,0,0,0.95) 100%
+        );
+
+    z-index: 1;
+
+}
+
+
+/* =====================================================
+   MODEL INFORMATION
+===================================================== */
+
+.bmw-model-info {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    z-index: 2;
+
+    padding: 28px;
+
+}
+
+
+/* Number */
+
+.bmw-model-number {
+
+    color:
+        var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* Model name */
+
+.bmw-model-info h3 {
+
+    margin:
+        8px 0
+        18px;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+}
+
+
+/* Explore */
+
+.bmw-explore {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        var(--gold-light);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* Arrow */
+
+.bmw-explore i {
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.bmw-model-card:hover
+.bmw-explore i {
+
+    transform:
+        translate(
+            4px,
+            -4px
+        );
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.bmw-footer {
+
+    padding:
+        30px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(200,169,107,0.14);
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.bmw-footer span {
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =====================================================
+   HERO ANIMATION
+===================================================== */
+
+@keyframes bmwHeroMotion {
+
+    from {
+
+        transform:
+            scale(1.04);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.10);
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .aurevia-navbar {
+
+        height: 70px;
+
+        min-height: 70px;
+
+    }
+
+
+    .aurevia-navbar
+    > .container-fluid {
+
+        height: 70px;
+
+    }
+
+
+    .aurevia-navbar .logo {
+
+        width: 90px !important;
+
+        height: 45px !important;
+
+    }
+
+
+    /*
+       IMPORTANT:
+       Do NOT set display:block/flex here.
+       Bootstrap controls .collapse/.show.
+    */
+
+    .aurevia-navbar
+    .navbar-collapse {
+
+        height: auto !important;
+
+        margin-top: 0 !important;
+
+        padding: 20px !important;
+
+        background:
+            rgba(3,3,3,0.98);
+
+        border:
+            1px solid
+            rgba(200,169,107,0.15);
+
+    }
+
+
+    .aurevia-navbar
+    .navbar-nav {
+
+        height: auto !important;
+
+        align-items: flex-start;
+
+    }
+
+
+    .bmw-section-heading {
+
+        display: block;
+
+    }
+
+
+    .bmw-section-description {
+
+        margin-top: 20px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .bmw-hero {
+        height: 45vh;
+        min-height: 350px;
+    }
+
+}
+
+
+    .aurevia-navbar
+    > .container-fluid {
+
+        height: 65px;
+
+    }
+
+
+    .aurevia-navbar .logo {
+
+        width: 85px !important;
+
+        height: 42px !important;
+
+    }
+
+
+    .bmw-hero {
+
+        min-height: 55vh;
+
+    }
+
+
+    .bmw-hero-content {
+
+        padding:
+            80px 0
+            55px;
+
+    }
+
+
+    .bmw-title {
+
+        font-size: 64px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .bmw-models {
+
+        padding:
+            65px 0
+            80px;
+
+    }
+
+
+    .bmw-model-card {
+
+        height: 390px;
+
+    }
+
+
+    .bmw-model-info {
+
+        padding: 22px;
+
+    }
+
+
+    .bmw-model-info h3 {
+
+        font-size: 24px;
+
+    }
+
+}
